@@ -43,10 +43,49 @@
 Los conjuntos almacenan elementos, no se consideran repetidos y responde a la pregunta de $"$¿está el elemento?$"$, esto último quiere decir que no tenemos forma de tomar un elemento sino predicar acerca de si está o no.
 \subsection*{Pertenecencia a un Conjunto}
 Si consideramos cualquier elemento $x$, decimos que está en un conjunto A si \textbf{x pertenece a A}. \\
-Se denota como: $x \in A$ \\
+La pertenencia de un elemento a un conjunto la denotamos como: $x \in A$ \\
 \textbf{Importante}: La relación está dada por $Elemento \ en \ Conjunto$ \\
 Véase \hyperref[subsec:pertenecencia_conjuntos]{\underline{ánexo}} para ejemplos más didácticos.
-
+\subsection*{Inclusión a un Conjunto}
+Sean A y D conjuntos cualesquiera.
+Decimos que D es un subconjunto de A sí y solo sí todos los elementos de D están en A. \\
+La inclusión en un conjunto la denotamos como $D \subseteq A$ \\
+Es posible leer el símbolo $ \subseteq $ de tres maneras: 
+\begin{itemize}
+    \item "D es un subconjunto de A"
+    \item "D está incluido en A"
+    \item "D está contenido en A"
+\end{itemize}
+Los subconjuntos posibles no salen más que haciendo combinaciones con sus elementos, es decir, agruparlos de diferentes formas. \\
+Véase \hyperref[subsec:inclusion_conjuntos]{\underline{ánexo}} para ejemplos más didácticos.
+\subsection*{Cardinal de un Conjunto}
+Sea A un conjunto, el cardinal de un conjunto indica la cantidad de elementos en el conjunto. \\
+Se denota como: $\#A$
+\subsection*{Cantidad de Subconjuntos posibles dado un Conjunto}
+Sea un conjunto A, la cantidad de subconjuntos D para el conjunto A es: $2^{\#A}$
+\subsection*{Elemento Vacío}
+Se representa con el símbolo de $\emptyset$. El elemento vacío está \textbf{incluido} en todos los conjuntos. \\
+\textbf{Importante}: El elemento vacío NO pertenece a todos los conjuntos sino que está incluido en todos.
+\subsection*{Cuantificadores}
+Nos permiten predicar acerca de los elementos de un conjunto dado. 
+\begin{itemize}
+    \item $\forall$ x: Para todo x.
+    \begin{itemize}
+        \item Para que sea verdadero todos deben cumplir la condición dada.
+        \item Es falso si existe un caso en que no se cumple.
+    \end{itemize}
+    \item $\exists$ x: Existe un x
+    \begin{itemize}
+        \item Para que sea verdadero alcanza con encontrar un caso verdadero.
+        \item Es falso si no hay ningun caso que cumpla la condición
+    \end{itemize}
+\end{itemize}
+\textbf{Importante}: El símbolo de $:$ o $\symbol{92}$ significa "tal que"
+Véase \hyperref[subsec:cuantificadores]{\underline{ánexo}} para ejemplos más didácticos.
+\section*{Operaciones entre Conjuntos}
+Sean A y B conjuntos cualesquiera.
+\subsection*{Unión $(A \cup B)$}
+Es exactamente igual como en la lógica proposicional. La unión es un "ó" lógico.
 \section*{Anexo}
 \subsection*{Pertenencia en Conjuntos}
 \label{subsec:pertenecencia_conjuntos}
@@ -57,5 +96,25 @@ Sea A el conjunto: $\{1, 2, \{C, B\}, F, \{10, 15\}\}$
     \item $  \{C, B\}, \{10, 15\} \in A $
 \end{itemize}
 ¿Por qué $C \notin A$? Pues C no es un elemento de A.\\ Notar que C es parte del elemento $\{C, B\}$ en A, pero C no es un elemento independiente.
+\subsection*{Inclusión en Conjuntos}
+\label{subsec:inclusion_conjuntos}
+\textbf{Ex. 1}: Sea $A = \{1, 2, 3\} \ y \ D = \{1, 3\}$. ¿Es D un subconjunto de A? \\
+Sí, lo es pues $1 \in A$ y $ 3 \in A$ \\
+\textbf{Ex. 2}: Sea $A = \{1, \{1, 4\}, 3, 10\}$
+\begin{itemize}
+    \item $ \{1, 4\} \nsubseteq A $ pues no existen 1 y 4 como elementos en A
+    \item $ \{1, 4\} \in A $ pues $\{1, 4\} es un elemento de A$
+    \item $\{1, 3\} \subseteq A$ pues $ 1 \in A, 3 \in A$, lo mismo sucede con $ \{1, 10\} \ o \ \{3, 10\}$
+\end{itemize}
+\subsection*{Cuantificadores}
+\label{subsec:cuantificadores}
+\textbf{Ex. 1}: $A = \{2, 4, 6, 8\}$ \\
+Algunos ejemplos utilizando cuantificadores 
+\begin{itemize}
+    \item $\forall x \in A \ \symbol{92} \ x \% 2 = 0$ (Todos pares en A)
+    \item $\neg \ \exists x \in A \ \symbol{92} x \% 2 \neq 0$ (No existe ningún impar en A) 
+    \item $ \exists x \in A \ \symbol{92} x = 4$ (Existe un elemento en A que es exactamente 4)
+\end{itemize}
 
 \end{document} 
+
