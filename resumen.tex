@@ -104,10 +104,10 @@ Es exactamente igual como en la lógica proposicional. La unión es un $o$ lógi
     \caption{Unión de conjuntos}
 \end{table} 
 Cada fila se puede generalizar para un x cualquiera en las operaciones lógicas. \\
-Ej.: $x \in A \lor x \in B$ entonces $ x \in A \cup B$ esto claramente nos dice que estamos en el caso de la fila 1. \\
-Ej.: $x \notin A \lor x \in B$ entonces $ x \in A \cup B$ esto claramente nos dice que estamos en el caso de la fila 3.
+Ej.: Si $x \in A \land x \in B$ entonces $ x \in A \cup B$ esto claramente nos dice que estamos en el caso de la fila 1. \\
+Ej.: Si $x \notin A \land x \in B$ entonces $ x \in A \cup B$ esto claramente nos dice que estamos en el caso de la fila 3.
 \subsection*{Intersección $(A \cap B)$}
-Es exactamente igual como en la lógica proposicional. La unión es un $"y"$ lógico. En el conjunto resultante quedan los elementos que están tanto en A y en B.
+Es exactamente igual como en la lógica proposicional. La intersección es un $"y"$ lógico. En el conjunto resultante quedan los elementos que están tanto en A y en B.
 \begin{table}[h!]
     \centering
     \begin{tabular}{|c | c | c|}
@@ -123,8 +123,8 @@ Es exactamente igual como en la lógica proposicional. La unión es un $"y"$ ló
     \caption{Intersección de conjuntos}
 \end{table} \\
 Cada fila se puede generalizar para un x cualquiera en las operacines lógicas. \\
-Ej.: $x \in A \land x \in B$ entonces $ x \in A \cap B$ esto claramente nos dice que estamos en el caso de la fila 1. \\
-Ej.: $x \notin A \land x \in B$ entonces $ x \notin A \cap B$ esto claramente nos dice que estamos en el caso de la fila 3.
+Ej.: Si $x \in A \land x \in B$ entonces $ x \in A \cap B$ esto claramente nos dice que estamos en el caso de la fila 1. \\
+Ej.: Si $x \notin A \land x \in B$ entonces $ x \notin A \cap B$ esto claramente nos dice que estamos en el caso de la fila 3.
 \subsection*{Complemento $(A \cap B)$}
 En la lógica proposicional, el complemento es la negación. Lo que está en un conjunto universal V pero no en el conjunto.
 \begin{table}[h!]
@@ -142,10 +142,73 @@ En la lógica proposicional, el complemento es la negación. Lo que está en un 
     \caption{Complemento en Conjuntos}
 \end{table} \\
 Cada fila se puede generalizar para un x cualquiera en las operaciones lógicas. \\
-Ej.: $x \in A$ entonces termina siendo $ x \notin A$ esto claramente nos dice que estamos en el caso de la fila 1. \\
+Ej.: Si $x \in A$ entonces termina siendo $ x \notin A$ esto claramente nos dice que estamos en el caso de la fila 1. \\
 
 Sea $A=\{1, 2\}, B=\{3, 4, 5\}, C=\{8, 9\}, V=\{A, B, C\} \implies A^{c} = \{3, 4, 5, 8, 9\}$ \\
 \textbf{Importante}: Nótese que siempre se hace el complemento en base a los elementos que hay en el universo y se excluyen algunos. En este caso, del universo V nos quedamos con los que NO están en A.
+\newpage
+\subsection*{Diferencia $(A-B )$}
+Esta operación es conocida también de la siguiente manera $A\symbol{92}B$.
+Es una equivalencia de $A \cap B^{c}$. Representa lo que está en A pero no en B. Si se lo quisiera representar en la tabla de verdad, debe representar la equivalencia.
+\begin{table}[h!]
+    \centering
+    \begin{tabular}{|c | c | c | c|}
+    \hline
+    \textbf{A} & \textbf{B} & \textbf{$B^{c}$} & \textbf{$A \cap B^{c}$} \\[0.1cm]
+    \hline
+    V & V & F & F\\
+    V & F & V & V\\
+    F & V & F & F\\
+    F & F & V & F\\
+    \hline
+    \end{tabular}
+    \caption{Diferencia de conjuntos}
+\end{table} \\
+\subsection*{Diferencia Simétrica $(A \triangle B)$}
+Equivalente al XOR($\veebar$) u $o$ excluyente en la lógica proposicional. \\
+Es una equivalencia de $(A - B) \cup (B - A)$ y $(A\cup B) - (A \cap B)$. Representa lo que está en A o en B pero no en ambos. 
+\begin{table}[h!]
+    \centering
+    \begin{tabular}{|c | c | c | c | c|}
+    \hline
+    \textbf{A} & \textbf{B} & \textbf{$A \veebar B$} & \textcolor{blue}{$(A - B) \cup (B - A)$} & \textcolor{blue}{$(A\cup B) - (A \cap B)$} \\[0.1cm]
+    \hline
+    V & V & F & F & F \\
+    V & F & V & V & V \\
+    F & V & V & V & V \\
+    F & F & F & V & V \\
+    \hline
+    \end{tabular}
+    \caption{Diferencia Simétrica en conjuntos}
+\end{table} \\
+\textbf{Nota}: Las columnas en azul son equivalencias a la operación $\veebar$ y son útiles a la hora de demostrar. \\
+Ej.: Si $x \in A \land x \in B$ entonces $ x \veebar B = F$ esto claramente nos dice que estamos en el caso de la fila 1.
+Ej.: Si $x \in A \land x \notin B$ entonces $ x \veebar B = V$ esto claramente nos dice que estamos en el caso de la fila 2. \\
+\subsection*{Inclusión $(A \subseteq B)$}
+Representa el $\implies$ de la lógica proposicional. Recordemos que la inclusión es verdadera si todos los elementos de A están en B siendo A y B conjuntos cualesquiera. \\
+Es lo que vamos a utilizar para demostrar, y es importante que se lo entienda bien. 
+\begin{table}[h!]
+    \centering
+    \begin{tabular}{|c | c | c|}
+    \hline
+    \textbf{A} & \textbf{B} & \textbf{$A \implies B$} \\[0.1cm]
+    \hline
+    V & V & V \\
+    V & F & F \\
+    F & V & V \\
+    F & F & V \\
+    \hline
+    \end{tabular}
+    \caption{Inclusión de conjuntos}
+\end{table} 
+\textbf{Tips}: 
+\begin{itemize}
+    \item El único caso que nos importa es que si el antecedente es verdadero, hay que ver que el consecuente NO sea falso. En las demostraciones asumimos que vale el antecedente y tenemos que ver si hace verdadero al consecuente.
+    \item Si no se cumple el antecedente, el consecuente es siempre verdadero.
+\end{itemize}
+Cada fila se puede generalizar para un x cualquiera en las operacines lógicas. \\
+Ej.: Sea $A = \{1, 2, 3\} \ B = \{10, 40\} \ x = 100$ ¿Se cumple que $ x \in A \implies x \in B$? ¿100 está en A? No, y al ser una implicación si el antecedente no se cumple, queda toda la proposición verdadera. Luego, sí, se cumple que $ x \in A \implies x \in B$. Esto claramente nos dice que estamos en el caso de la fila 3. \\ 
+Ej.: Sea $A = \{1, 2, 3\} \ B = \{10, 40\} \ x = 3$ ¿Se cumple que $ x \in A \implies x \in B$? ¿3 está en A? Sí. Entonces esto hace al antecedente verdadero ¿me basta para decir que la proposición es verdadera? No. Primero debo ver qué pasa con el consecuente. ¿Es cierto que 3 está en B? No. Entonces como el antecedente es verdadero y el consecuente es falso, la proposición es falsa. Luego, no, no se cumple que $ x \in A \implies x \in B$. Esto claramente nos dice que estamos en el caso de la fila 2.
 \section*{Anexo}
 \subsection*{Pertenencia en Conjuntos}
 \label{subsec:pertenecencia_conjuntos}
