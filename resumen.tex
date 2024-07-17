@@ -182,8 +182,8 @@ Es una equivalencia de $(A - B) \cup (B - A)$ y $(A\cup B) - (A \cap B)$. Repres
     \caption{Diferencia Simétrica en conjuntos}
 \end{table} \\
 \textbf{Nota}: Las columnas en azul son equivalencias a la operación $\veebar$ y son útiles a la hora de demostrar. \\
-Ej.: Si $x \in A \land x \in B$ entonces $ x \veebar B = F$ esto claramente nos dice que estamos en el caso de la fila 1.
-Ej.: Si $x \in A \land x \notin B$ entonces $ x \veebar B = V$ esto claramente nos dice que estamos en el caso de la fila 2. \\
+Ej.: Si $x \in A \land x \in B$ entonces $ A \veebar B = F$ esto claramente nos dice que estamos en el caso de la fila 1.
+Ej.: Si $x \in A \land x \notin B$ entonces $ A \veebar B = V$ esto claramente nos dice que estamos en el caso de la fila 2. \\
 \subsection*{Inclusión $(A \subseteq B)$}
 Representa el $\implies$ de la lógica proposicional. Recordemos que la inclusión es verdadera si todos los elementos de A están en B siendo A y B conjuntos cualesquiera. \\
 Es lo que vamos a utilizar para demostrar, y es importante que se lo entienda bien. 
@@ -201,14 +201,33 @@ Es lo que vamos a utilizar para demostrar, y es importante que se lo entienda bi
     \end{tabular}
     \caption{Inclusión de conjuntos}
 \end{table} 
-\textbf{Tips}: 
 \begin{itemize}
     \item El único caso que nos importa es que si el antecedente es verdadero, hay que ver que el consecuente NO sea falso. En las demostraciones asumimos que vale el antecedente y tenemos que ver si hace verdadero al consecuente.
     \item Si no se cumple el antecedente, el consecuente es siempre verdadero.
 \end{itemize}
 Cada fila se puede generalizar para un x cualquiera en las operacines lógicas. \\
 Ej.: Sea $A = \{1, 2, 3\} \ B = \{10, 40\} \ x = 100$ ¿Se cumple que $ x \in A \implies x \in B$? ¿100 está en A? No, y al ser una implicación si el antecedente no se cumple, queda toda la proposición verdadera. Luego, sí, se cumple que $ x \in A \implies x \in B$. Esto claramente nos dice que estamos en el caso de la fila 3. \\ 
-Ej.: Sea $A = \{1, 2, 3\} \ B = \{10, 40\} \ x = 3$ ¿Se cumple que $ x \in A \implies x \in B$? ¿3 está en A? Sí. Entonces esto hace al antecedente verdadero ¿me basta para decir que la proposición es verdadera? No. Primero debo ver qué pasa con el consecuente. ¿Es cierto que 3 está en B? No. Entonces como el antecedente es verdadero y el consecuente es falso, la proposición es falsa. Luego, no, no se cumple que $ x \in A \implies x \in B$. Esto claramente nos dice que estamos en el caso de la fila 2.
+Ej.: Sea $A = \{1, 2, 3\} \ B = \{10, 40\} \ x = 3$ ¿Se cumple que $ x \in A \implies x \in B$? ¿3 está en A? Sí. Entonces esto hace al antecedente verdadero ¿me basta para decir que la proposición es verdadera? No. Primero debo ver qué pasa con el consecuente. ¿Es cierto que 3 está en B? No. Entonces como el antecedente es verdadero y el consecuente es falso, la proposición es falsa. Luego, no, no se cumple que $ x \in A \implies x \in B$. Esto claramente nos dice que estamos en el caso de la fila 2. \\
+\textbf{Nota}: Que se entiendan los ejemplos anteriormente mencionados es realmente importante. Se usa en prácticamente todas las demostraciones.\subsection*{Igualdad $(A \iff B)$}
+Representa el $\iff$ (sí y solo sí) de la lógica proposicional. Recordemos que la igualdad es verdadera si todos los elementos de A están en B siendo A y B conjuntos cualesquiera. \\
+\begin{table}[h!]
+    \centering
+    \begin{tabular}{|c | c | c|}
+    \hline
+    \textbf{A} & \textbf{B} & \textbf{$A \iff B$} \\[0.1cm]
+    \hline
+    V & V & V \\
+    V & F & F \\
+    F & V & F \\
+    F & F & F \\
+    \hline
+    \end{tabular}
+    \caption{Igualdad de conjuntos}
+\end{table} 
+\begin{itemize}
+    \item La manera de demostrar esto es viendo si se cumple que $A \subseteq B \ y \ B \subseteq A$
+\end{itemize}
+Cada fila se puede generalizar para un x cualquiera en las operacines lógicas. 
 \section*{Anexo}
 \subsection*{Pertenencia en Conjuntos}
 \label{subsec:pertenecencia_conjuntos}
