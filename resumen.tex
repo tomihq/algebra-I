@@ -260,9 +260,19 @@ Se dice que R es una relación en A cuando $ R \subseteq AXA$ \\
 Veamos ahora \textbf{las propiedades de las relaciones de un conjunto en sí mismo}.
 \subsection*{Reflexividad}
 Una relación es reflexiva sí y solo sí para todo elemento de A, a está relacionado con A. \\
-Formalmente: $ \forall a \in A \implies aRa$ \\
+\textbf{Formalmente}: $ \forall a \in A \implies aRa$ \\
 \textbf{Ej.}: $A = \{1, 2, 3\}, AXA=\{\{1, 1\}, \{1, 2\}, \{1, 3\}, \{2, 2\}, \{2, 3\}, \{3, 3\}\}, R = \{\{1, 1\}, \{1, 2\}, \{1, 3\}\}$ ¿Es R una relación válida de AXB? Sí lo es. ¿Es reflexiva? No, no lo es, pues 2 no está relacionado con 2, ni tampoco 3 con el 3.\\
 \textbf{Ej.}: $A = \{1, 2, 3\}, AXA=\{\{1, 1\}, \{1, 2\}, \{1, 3\}, \{2, 2\}, \{2, 3\}, \{3, 3\}\}, R = \{\{1, 1\}, \{2, 2\}, \{3, 3\}, \{1, 2\}\}$ ¿Es R una relación válida de AXB? Sí lo es. ¿Es reflexiva? Sí, pues para todo elemento a en R, aRa.\\
+
+\textbf{Nota}: Una relación que solamente tiene dentro los elementos aRa es llamada identidad. Considerando el AXA anterior, la relación identidad sería R = $\{\{1, 1\}, \{2, 2\}, \{3, 3\}\}$
+\subsection*{Simetría}
+Sean a, b $\in$ A. Una relación es simétrica sí y solo sí $aRb \implies bRa$. Vulgarmente decimos que si uno está relacionado con el otro, el otro está obligado a estarlo también. \\
+\textbf{Formalmente}: $ \forall a \in A \implies aRa$ \\
+\textbf{Ej.}: $R = \{\{1, 2\}, \{3, 1\}\}$, no es simétrica pues sucede que $1R2$ pero 2 no está relacionado con 1. \\
+\textbf{Ej.}: $R = \{\{1, 2\}, \{2, 1\}\}$, es simétrica pues para todo elemento relacionado, se relacionan conjuntamente. \\
+\textbf{Ej.}: $R = \{\{1, 1\}\}$, es simétrica, pues no existe ninguna relación entre elementos diferentes. Por lo tanto, el antecedente es falso, luego la proposición ($aRb \implies bRa$) es verdadera \\
+
+\textbf{Nota}: Como es una implicación, si el antecedente es falso (no hay ningún elemento, o no existe relación entre ellos) entonces es simétrica.
 \section*{Anexo}
 \subsection*{Pertenencia en Conjuntos}
 \label{subsec:pertenecencia_conjuntos}
