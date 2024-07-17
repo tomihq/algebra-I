@@ -40,7 +40,8 @@
 
 \newpage
 \section*{Conjuntos}
-Los conjuntos almacenan elementos, no se consideran repetidos y responde a la pregunta de $"$¿está el elemento?$"$, esto último quiere decir que no tenemos forma de tomar un elemento sino predicar acerca de si está o no.
+Los conjuntos almacenan elementos, \textbf{no se consideran repetidos ni tampoco importa el orden}. Responde a la pregunta de $"$¿está el elemento?$"$, esto último quiere decir que no tenemos forma de tomar un elemento sino predicar acerca de si está o no. \\
+\textbf{Ej.}: $ A = \{1, 2\}, B = \{2, 1\}$. A y B son considerados iguales, pues no importa el orden sino los elementos que tienen dentro.
 \subsection*{Pertenecencia a un Conjunto}
 Si consideramos cualquier elemento $x$, decimos que está en un conjunto A si \textbf{x pertenece a A}. \\
 La pertenencia de un elemento a un conjunto la denotamos como: $x \in A$ \\
@@ -104,8 +105,8 @@ Es exactamente igual como en la lógica proposicional. La unión es un $o$ lógi
     \caption{Unión de conjuntos}
 \end{table} 
 Cada fila se puede generalizar para un x cualquiera en las operaciones lógicas. \\
-Ej.: Si $x \in A \land x \in B$ entonces $ x \in A \cup B$ esto claramente nos dice que estamos en el caso de la fila 1. \\
-Ej.: Si $x \notin A \land x \in B$ entonces $ x \in A \cup B$ esto claramente nos dice que estamos en el caso de la fila 3.
+\textbf{Ej.}: Si $x \in A \land x \in B$ entonces $ x \in A \cup B$ esto claramente nos dice que estamos en el caso de la fila 1. \\
+\textbf{Ej.}: Si $x \notin A \land x \in B$ entonces $ x \in A \cup B$ esto claramente nos dice que estamos en el caso de la fila 3.
 \subsection*{Intersección $(A \cap B)$}
 Es exactamente igual como en la lógica proposicional. La intersección es un $"y"$ lógico. En el conjunto resultante quedan los elementos que están tanto en A y en B.
 \begin{table}[h!]
@@ -123,8 +124,8 @@ Es exactamente igual como en la lógica proposicional. La intersección es un $"
     \caption{Intersección de conjuntos}
 \end{table} \\
 Cada fila se puede generalizar para un x cualquiera en las operaciones lógicas. \\
-Ej.: Si $x \in A \land x \in B$ entonces $ x \in A \cap B$ esto claramente nos dice que estamos en el caso de la fila 1. \\
-Ej.: Si $x \notin A \land x \in B$ entonces $ x \notin A \cap B$ esto claramente nos dice que estamos en el caso de la fila 3.
+\textbf{Ej.}: Si $x \in A \land x \in B$ entonces $ x \in A \cap B$ esto claramente nos dice que estamos en el caso de la fila 1. \\
+\textbf{Ej.}: Si $x \notin A \land x \in B$ entonces $ x \notin A \cap B$ esto claramente nos dice que estamos en el caso de la fila 3.
 \subsection*{Complemento $(A \cap B)$}
 En la lógica proposicional, el complemento es la negación. Lo que está en un conjunto universal V pero no en el conjunto.
 \begin{table}[h!]
@@ -142,7 +143,7 @@ En la lógica proposicional, el complemento es la negación. Lo que está en un 
     \caption{Complemento en Conjuntos}
 \end{table} \\
 Cada fila se puede generalizar para un x cualquiera en las operaciones lógicas. \\
-Ej.: Si $x \in A$ entonces termina siendo $ x \notin A$ esto claramente nos dice que estamos en el caso de la fila 1. \\
+\textbf{Ej.}: Si $x \in A$ entonces termina siendo $ x \notin A$ esto claramente nos dice que estamos en el caso de la fila 1. \\
 
 Sea $A=\{1, 2\}, B=\{3, 4, 5\}, C=\{8, 9\}, V=\{A, B, C\} \implies A^{c} = \{3, 4, 5, 8, 9\}$ \\
 \textbf{Importante}: Nótese que siempre se hace el complemento en base a los elementos que hay en el universo y se excluyen algunos. En este caso, del universo V nos quedamos con los que NO están en A.
@@ -182,8 +183,8 @@ Es una equivalencia de $(A - B) \cup (B - A)$ y $(A\cup B) - (A \cap B)$. Repres
     \caption{Diferencia Simétrica en conjuntos}
 \end{table} \\
 \textbf{Nota}: Las columnas en azul son equivalencias a la operación $\veebar$ y son útiles a la hora de demostrar. \\
-Ej.: Si $x \in A \land x \in B$ entonces $ A \veebar B = F$ esto claramente nos dice que estamos en el caso de la fila 1.
-Ej.: Si $x \in A \land x \notin B$ entonces $ A \veebar B = V$ esto claramente nos dice que estamos en el caso de la fila 2. \\
+\textbf{Ej.}: Si $x \in A \land x \in B$ entonces $ A \veebar B = F$ esto claramente nos dice que estamos en el caso de la fila 1.
+\textbf{Ej.}: Si $x \in A \land x \notin B$ entonces $ A \veebar B = V$ esto claramente nos dice que estamos en el caso de la fila 2. \\
 \subsection*{Inclusión $(A \subseteq B)$}
 Representa el $\implies$ de la lógica proposicional. Recordemos que la inclusión es verdadera si todos los elementos de A están en B siendo A y B conjuntos cualesquiera. \\
 Es lo que vamos a utilizar para demostrar, y es importante que se lo entienda bien. 
@@ -206,8 +207,8 @@ Es lo que vamos a utilizar para demostrar, y es importante que se lo entienda bi
     \item Si no se cumple el antecedente, el consecuente es siempre verdadero.
 \end{itemize}
 Cada fila se puede generalizar para un x cualquiera en las operaciones lógicas. \\
-Ej.: Sea $A = \{1, 2, 3\} \ B = \{10, 40\} \ x = 100$ ¿Se cumple que $ x \in A \implies x \in B$? ¿100 está en A? No, y al ser una implicación si el antecedente no se cumple, queda toda la proposición verdadera. Luego, sí, se cumple que $ x \in A \implies x \in B$. Esto claramente nos dice que estamos en el caso de la fila 3. \\ 
-Ej.: Sea $A = \{1, 2, 3\} \ B = \{10, 40\} \ x = 3$ ¿Se cumple que $ x \in A \implies x \in B$? ¿3 está en A? Sí. Entonces esto hace al antecedente verdadero ¿me basta para decir que la proposición es verdadera? No. Primero debo ver qué pasa con el consecuente. ¿Es cierto que 3 está en B? No. Entonces como el antecedente es verdadero y el consecuente es falso, la proposición es falsa. Luego, no, no se cumple que $ x \in A \implies x \in B$. Esto claramente nos dice que estamos en el caso de la fila 2. \\
+\textbf{Ej.}: Sea $A = \{1, 2, 3\} \ B = \{10, 40\} \ x = 100$ ¿Se cumple que $ x \in A \implies x \in B$? ¿100 está en A? No, y al ser una implicación si el antecedente no se cumple, queda toda la proposición verdadera. Luego, sí, se cumple que $ x \in A \implies x \in B$. Esto claramente nos dice que estamos en el caso de la fila 3. \\ 
+\textbf{Ej.}: Sea $A = \{1, 2, 3\} \ B = \{10, 40\} \ x = 3$ ¿Se cumple que $ x \in A \implies x \in B$? ¿3 está en A? Sí. Entonces esto hace al antecedente verdadero ¿me basta para decir que la proposición es verdadera? No. Primero debo ver qué pasa con el consecuente. ¿Es cierto que 3 está en B? No. Entonces como el antecedente es verdadero y el consecuente es falso, la proposición es falsa. Luego, no, no se cumple que $ x \in A \implies x \in B$. Esto claramente nos dice que estamos en el caso de la fila 2. \\
 \textbf{Nota}: Que se entiendan los ejemplos anteriormente mencionados es realmente importante. Se usa en prácticamente todas las demostraciones.\subsection*{Igualdad $(A \iff B)$}
 Representa el $\iff$ (sí y solo sí) de la lógica proposicional. Recordemos que la igualdad es verdadera si todos los elementos de A están en B siendo A y B conjuntos cualesquiera. \\
 \begin{table}[h!]
@@ -246,8 +247,22 @@ Sean dos conjuntos A y B cualquiera. El producto cartesiano es el par ordenado (
 La cantidad de elementos máxima en un producto cartesiano es = $\#A \ast \#B$. \\
 Sí o sí es necesario que el par NO sea nulo, es decir, deben ser elementos válidos. \\
 \textbf{Importante}: AXB $\neq$ BXA \\
-Ej.: $A = \{1, 2, 3\}, B = \emptyset, AXB = \emptyset$, pues B está vacío. \\
-Ej.: $A = \{1, 2, 3\}, B = \{4, 5\}, \#AXB = 6, AXB = \{\{1, 4\}, \{1, 5\}, \{2, 4\}, \{2, 5\}, \{3, 4\}, \{3, 5\} \}$
+\textbf{Ej.}: $A = \{1, 2, 3\}, B = \emptyset, AXB = \emptyset$, pues B está vacío. \\
+\textbf{Ej.}: $A = \{1, 2, 3\}, B = \{4, 5\}, \#AXB = 6, AXB = \{\{1, 4\}, \{1, 5\}, \{2, 4\}, \{2, 5\}, \{3, 4\}, \{3, 5\} \}$
+\section*{Relaciones}
+Sean A y B conjuntos. Una relación A en B es un subconjunto cualquiera R de AXB. \\
+\textbf{Ej.}: $A = \{1\}, B = \{4, 5\}, AXB=\{\{1, 4\}, \{1, 5\}\}, R = \{\{1, 1\}, \{1, 2\}, \{1, 4\}\}$ ¿Es R una relación válida de AXB? No, no lo es pues $\{1, 1\} \in R$ pero $ \{1, 1\} \notin AXB$
+\section*{Relaciones de un conjunto en sí mismo}
+Sea A un conjunto cualquiera. Se dice que A está relacionado con A sí y solo sí AXA. \\
+Se dice que R es una relación en A cuando $ R \subseteq AXA$ \\
+\textbf{Ej.}: $A = \{1, 2, 3\}, AXA=\{\{1, 1\}, \{1, 2\}, \{1, 3\}, \{2, 2\}, \{2, 3\}, \{3, 3\}\}, R = \{\{1, 2\}, \{1, 4\}\}$ ¿Es R una relación válida de AXB? No, no lo es pues $\{1, 4\} \in R$ pero $ \{1, 4\} \notin AXB$ \\
+\textbf{Ej.}: $A = \{1, 2, 3\}, AXA=\{\{1, 1\}, \{1, 2\}, \{1, 3\}, \{2, 2\}, \{2, 3\}, \{3, 3\}\}, R = \{\{1, 1\}, \{1, 2\}, \{1, 3\}\}$ ¿Es R una relación válida de AXB? Sí lo es, pues todos los subconjuntos pertenecientes a R pertenecen a AXA. \\
+Veamos ahora \textbf{las propiedades de las relaciones de un conjunto en sí mismo}.
+\subsection*{Reflexividad}
+Una relación es reflexiva sí y solo sí para todo elemento de A, a está relacionado con A. \\
+Formalmente: $ \forall a \in A \implies aRa$ \\
+\textbf{Ej.}: $A = \{1, 2, 3\}, AXA=\{\{1, 1\}, \{1, 2\}, \{1, 3\}, \{2, 2\}, \{2, 3\}, \{3, 3\}\}, R = \{\{1, 1\}, \{1, 2\}, \{1, 3\}\}$ ¿Es R una relación válida de AXB? Sí lo es. ¿Es reflexiva? No, no lo es, pues 2 no está relacionado con 2, ni tampoco 3 con el 3.\\
+\textbf{Ej.}: $A = \{1, 2, 3\}, AXA=\{\{1, 1\}, \{1, 2\}, \{1, 3\}, \{2, 2\}, \{2, 3\}, \{3, 3\}\}, R = \{\{1, 1\}, \{2, 2\}, \{3, 3\}, \{1, 2\}\}$ ¿Es R una relación válida de AXB? Sí lo es. ¿Es reflexiva? Sí, pues para todo elemento a en R, aRa.\\
 \section*{Anexo}
 \subsection*{Pertenencia en Conjuntos}
 \label{subsec:pertenecencia_conjuntos}
