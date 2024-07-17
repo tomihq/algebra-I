@@ -45,7 +45,7 @@ Los conjuntos almacenan elementos, \textbf{no se consideran repetidos ni tampoco
 \subsection*{Pertenecencia a un Conjunto}
 Si consideramos cualquier elemento $x$, decimos que está en un conjunto A si \textbf{x pertenece a A}. \\
 La pertenencia de un elemento a un conjunto la denotamos como: $x \in A$ \\
-\textbf{Importante}: La relación está dada por $Elemento \ en \ Conjunto$ \\
+\textbf{Importante}: La relación está dada por $Elemento \ y \ Conjunto$ \\
 Véase \hyperref[subsec:pertenecencia_conjuntos]{\underline{ánexo}} para ejemplos más didácticos.
 \subsection*{Inclusión a un Conjunto}
 Sean A y D conjuntos cualesquiera.
@@ -89,7 +89,7 @@ Nos permiten predicar acerca de los elementos de un conjunto dado.
         \item Es falso si no hay ningun caso que cumpla la condición
     \end{itemize}
 \end{itemize}
-\textbf{Importante}: El símbolo de $:$ o $\symbol{92}$ significa "tal que" \\
+\textbf{Importante}: El símbolo de $:$ o $/$ significa "tal que" \\
 Véase \hyperref[subsec:cuantificadores]{\underline{ánexo}} para ejemplos más didácticos.
 \section*{Operaciones entre Conjuntos}
 Sean A y B conjuntos cualesquiera. La cantidad de filas que tendrá una tabla de verdad es: \textbf{$2^{cantVariables}$} \\
@@ -301,9 +301,77 @@ Dado un conjunto A relacionado y en sí mismo AXA. Una relación R es identidad 
 \subsection*{Relación Total}
 Dado un conjunto A. Una relación R es total cuando R = AXA.
 \subsection*{Clases de Equivalencia}
+\label{subsec:clases_equivalencia}
 Sea A un conjunto y una relación de equivalencia en A. \\
 Para cada $x \in A$, la clase de equivalencia de x es el conjunto: $\bar{x} = [x] = \{y \in A \ \symbol{92} \ yRx\} \subseteq A$. Vulgarmente hablando, es el conjunto de los elementos con los que se relaciona x.
 \textbf{Ej.}: $ R = \{(1,1), (1, 2), (2, 1), (3, 1), (1, 3), (4, 5), (5, 4), (6, 6)\}$
+\begin{itemize}
+    \item $[1] = [2] = [3] =  \{1, 2, 3\}$
+    \item $[4] = [5] = \{4, 5\}$
+    \item $[6] = \{6\}$
+\end{itemize}
+\textbf{Propiedad fundamental}: O Sucede $ \bar{x} = \bar{y}$ o sucede $\bar{x} \cap \bar{y} = \emptyset $ pero no ambas a la vez. \\
+TODO: Añadir los ejemplos que hice en la tablet al anexo.
+\subsection*{Representante de clase}
+Cualquier elemento de una clase de equivalencia representa a su clase. 
+En la sección de \hyperref[subsec:clases_equivalencia]{\underline{\textbf{Clases de Equivalencia}}} cada clase $[x]$ es representada por x. \\
+\section*{Funciones}
+Una función $A \leftarrow B$ es una relación $ f \subseteq AXB$ entre A y B que satisface: 
+\begin{itemize}
+    \item $\forall a \in A, \exists! \ b \in B \ / \ (a, b) \in f$. Si a la función le mando un a, me devuelve siempre el mismo b (no existe más de un b para un mismo a).
+\end{itemize}
+En las funciones, el valor de b está determinado por a, es decir, $b = f(a)$. \\
+Para ser función, se debe cumplir \textbf{existencia ($\forall a \in A$)} y \textbf{unicidad ($\exists! \ b $)}. \\
+\textbf{Dominio}: Son los valores los cuales podemos observar y enviar para que el codominio nos arroje un resultado. \\
+\textbf{Codominio}: Son el resultado para un x dado que proviene del Dominio. \\
+Veamos ahora \textbf{los distintos tipos de funciones}.
+\subsection*{Función Inyectiva}
+Sean x, y x'. Si sucede que f(x) = f(x') entonces x = x'. \\
+Vulgarmente hablando, no existen dos x diferentes tal que el valor que arroja la imagen es el mismo.
+\[\begin{minipage}[b]{0.9\textwidth}
+    \includegraphics[width=\linewidth]{assets/def_inyectiva.jpg}
+    \label{fig:def_inyectiva}
+\end{minipage}\]
+\subsection*{Función Sobreyectiva}
+Sea $f:A \rightarrow B$. Una función es sobreyectiva si $ \forall b \in B, \exists a \ / \ f(a) = b$. \\
+Vulgarmente hablando, todos los posibles valores del codominio corresponden con algún valor del dominio.
+\[\begin{minipage}[b]{0.9\textwidth}
+    \includegraphics[width=\linewidth]{assets/def_sobreyectiva.jpg}
+    \label{fig:def_sobreyectiva}
+\end{minipage}\]
+\subsection*{Función Biyectiva}
+Si es Inyectiva y Sobreyectiva a la vez, entonces es biyectiva.
+\[\begin{minipage}[b]{0.9\textwidth}
+    \includegraphics[width=\linewidth]{assets/def_biyectiva.jpg}
+    \label{fig:def_biyectiva}
+\end{minipage}\]
+TODO: Añadir los ejemplos que hice en la tablet al anexo.
+\subsection*{Composición de Funciones}
+Sean las relaciones $R = AX\bar{B}$ y $S = \bar{B}XA$. \\
+La composición de R y S es la relación de A a C dada por: 
+$ SoR = \{(a, c) \in AXC, \ \exists b / (a, b) \in R \land (b, c) \in S\}$
+\[\begin{minipage}[b]{0.9\textwidth}
+    \includegraphics[width=\linewidth]{assets/composicion_funciones.png}
+    \label{fig:composicion_funciones}
+\end{minipage}\]
+\textbf{Ej.}: $f:A\rightarrow B \ g:B\rightarrow C \ gof: A\rightarrow C$ \\
+\textbf{Nota}: gof = g es el codominio y f el dominio. \\
+Propiedades: 
+\begin{itemize}
+    \item Si $f:A\rightarrow B \land g:B\rightarrow C$ son funciones entonces $gof$ también.
+    \item $I_{A}: A \rightarrow A$
+    \item $I_{A} \ o \ f = f$ 
+\end{itemize}
+\subsection*{Función Inversible}
+Si $f:A\rightarrow B$ su inversa es $g:B\rightarrow A$ y la denotamos como $f^{-1}$. \\
+Decimos que una función f es inversible si es biyectiva y hay una función g tal que:
+\begin{itemize}
+    \item $fog = I_{B}$
+    \item $gof = I_{A}$
+\end{itemize}
+Y en ese caso decimos que g es inversa de f. \\
+\section*{Naturales - Inducción}
+
 \section*{Anexo}
 \subsection*{Pertenencia en Conjuntos}
 \label{subsec:pertenecencia_conjuntos}
