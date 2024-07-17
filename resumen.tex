@@ -264,15 +264,35 @@ Una relación es reflexiva sí y solo sí para todo elemento de A, a está relac
 \textbf{Ej.}: $A = \{1, 2, 3\}, AXA=\{\{1, 1\}, \{1, 2\}, \{1, 3\}, \{2, 2\}, \{2, 3\}, \{3, 3\}\}, R = \{\{1, 1\}, \{1, 2\}, \{1, 3\}\}$ ¿Es R una relación válida de AXB? Sí lo es. ¿Es reflexiva? No, no lo es, pues 2 no está relacionado con 2, ni tampoco 3 con el 3.\\
 \textbf{Ej.}: $A = \{1, 2, 3\}, AXA=\{\{1, 1\}, \{1, 2\}, \{1, 3\}, \{2, 2\}, \{2, 3\}, \{3, 3\}\}, R = \{\{1, 1\}, \{2, 2\}, \{3, 3\}, \{1, 2\}\}$ ¿Es R una relación válida de AXB? Sí lo es. ¿Es reflexiva? Sí, pues para todo elemento a en R, aRa.\\
 
-\textbf{Nota}: Una relación que solamente tiene dentro los elementos aRa es llamada identidad. Considerando el AXA anterior, la relación identidad sería R = $\{\{1, 1\}, \{2, 2\}, \{3, 3\}\}$
+\textbf{Nota}: Una relación que solamente tiene dentro los elementos aRa es llamada identidad. Considerando el AXA anterior, la relación identidad sería R = $\{\{1, 1\}, \{2, 2\}, \{3, 3\}\}$  \\
+\textbf{Nota}: Si se quisiera buscar un contraejemplo, una buena forma es hallar un elemento que no se relacione con si mismo. 
 \subsection*{Simetría}
 Sean a, b $\in$ A. Una relación es simétrica sí y solo sí $aRb \implies bRa$. Vulgarmente decimos que si uno está relacionado con el otro, el otro está obligado a estarlo también. \\
-\textbf{Formalmente}: $ \forall a \in A \implies aRa$ \\
+\textbf{Formalmente}: $ \forall a, b \in A \ \symbol{92} \ aRb \implies bRa$ \\
 \textbf{Ej.}: $R = \{\{1, 2\}, \{3, 1\}\}$, no es simétrica pues sucede que $1R2$ pero 2 no está relacionado con 1. \\
 \textbf{Ej.}: $R = \{\{1, 2\}, \{2, 1\}\}$, es simétrica pues para todo elemento relacionado, se relacionan conjuntamente. \\
 \textbf{Ej.}: $R = \{\{1, 1\}\}$, es simétrica, pues no existe ninguna relación entre elementos diferentes. Por lo tanto, el antecedente es falso, luego la proposición ($aRb \implies bRa$) es verdadera \\
 
-\textbf{Nota}: Como es una implicación, si el antecedente es falso (no hay ningún elemento, o no existe relación entre ellos) entonces es simétrica.
+\textbf{Nota}: Como es una implicación, si el antecedente es falso (no hay ningún elemento, o no existe relación entre ellos) entonces es simétrica.  \\
+\textbf{Nota}: Si se quisiera buscar un contraejemplo, una buena forma es buscar simplemente un elemento que se conecte con otro, pero no al revés.
+\subsection*{Antisimétrica}
+Sean a, b $\in$ A. Una relación es antisimétrica sí y solo sí $aRb \land bRa \implies A = B$. Vulgarmente decimos que si ambos están relacionados, entonces es porque son iguales. \\
+\textbf{Formalmente}: $ \forall a, b \in A \ \symbol{92} \ aRb \land bRa \implies a=b$ \\
+\textbf{Ej.}: $R = \{\{1, 2\}, \{2, 1\}\}$, no es antisimétrica pues 1 se relaciona con 2, y 2 se relaciona con 1 pero $1 \neq 2$ \\
+\textbf{Ej.}: $R = \{\{1, 1\}, \{2, 2\}\}$, es antisimétrica pues 1 se relaciona con 1, 2 se relaciona con dos y son los mismos elementos. \\
+
+\textbf{Nota}: Si se quisiera buscar un contraejemplo, una buena forma es buscar un conjunto que la haga simétrica considerando la relación entre elementos diferentes.
+\subsection*{Transitividad}
+Sean a, b $\in$ A. Una relación es transitiva sí y solo sí $aRb \land bRc \implies aRc$. Vulgarmente decimos que si a me conecta con la calle b, y b con la calle c, entonces a me lleva a c. \\
+\textbf{Formalmente}: $ \forall a, b \in A \ \symbol{92} \ aRb \land bRc \implies aRc$ \\
+\textbf{Ej.}: $R = \{\{1, 2\}, \{2, 3\}, \{1, 3\} \}$, es transitiva pues como 1 me conecta con 2, y 2 se conecta con 3, entonces desde 1 puedo llegar a 3. \\
+\textbf{Nota}: Si se quisiera buscar un contraejemplo, una buena forma es buscar un a que esté relacionado con un b, y ese b esté relacionado con un c pero a no esté relacionado con c. Básicamente, sería hacer que se cumpla el antecedente pero no el consecuente.
+\subsection*{Relación Identidad}
+Dado un conjunto A relacionado y en sí mismo AXA. Una relación R es identidad sí y solo sí todos los elementos de R cumplen la forma de (a, a). \\
+\textbf{Ej.}: $R = \{\{1, 1\}, \{2, 2\}, \{3, 3\} \}$. Es identidad. \\
+\textbf{Ej.}: $R = \{\{1, 2\}, \{3, 3\} \}$. No es identidad pues $1 \neq 2$.
+\subsection*{Relación Total}
+Dado un conjunto A. Una relación R es total cuando R = AXA.
 \section*{Anexo}
 \subsection*{Pertenencia en Conjuntos}
 \label{subsec:pertenecencia_conjuntos}
