@@ -122,7 +122,7 @@ Es exactamente igual como en la lógica proposicional. La intersección es un $"
     \end{tabular}
     \caption{Intersección de conjuntos}
 \end{table} \\
-Cada fila se puede generalizar para un x cualquiera en las operacines lógicas. \\
+Cada fila se puede generalizar para un x cualquiera en las operaciones lógicas. \\
 Ej.: Si $x \in A \land x \in B$ entonces $ x \in A \cap B$ esto claramente nos dice que estamos en el caso de la fila 1. \\
 Ej.: Si $x \notin A \land x \in B$ entonces $ x \notin A \cap B$ esto claramente nos dice que estamos en el caso de la fila 3.
 \subsection*{Complemento $(A \cap B)$}
@@ -205,7 +205,7 @@ Es lo que vamos a utilizar para demostrar, y es importante que se lo entienda bi
     \item El único caso que nos importa es que si el antecedente es verdadero, hay que ver que el consecuente NO sea falso. En las demostraciones asumimos que vale el antecedente y tenemos que ver si hace verdadero al consecuente.
     \item Si no se cumple el antecedente, el consecuente es siempre verdadero.
 \end{itemize}
-Cada fila se puede generalizar para un x cualquiera en las operacines lógicas. \\
+Cada fila se puede generalizar para un x cualquiera en las operaciones lógicas. \\
 Ej.: Sea $A = \{1, 2, 3\} \ B = \{10, 40\} \ x = 100$ ¿Se cumple que $ x \in A \implies x \in B$? ¿100 está en A? No, y al ser una implicación si el antecedente no se cumple, queda toda la proposición verdadera. Luego, sí, se cumple que $ x \in A \implies x \in B$. Esto claramente nos dice que estamos en el caso de la fila 3. \\ 
 Ej.: Sea $A = \{1, 2, 3\} \ B = \{10, 40\} \ x = 3$ ¿Se cumple que $ x \in A \implies x \in B$? ¿3 está en A? Sí. Entonces esto hace al antecedente verdadero ¿me basta para decir que la proposición es verdadera? No. Primero debo ver qué pasa con el consecuente. ¿Es cierto que 3 está en B? No. Entonces como el antecedente es verdadero y el consecuente es falso, la proposición es falsa. Luego, no, no se cumple que $ x \in A \implies x \in B$. Esto claramente nos dice que estamos en el caso de la fila 2. \\
 \textbf{Nota}: Que se entiendan los ejemplos anteriormente mencionados es realmente importante. Se usa en prácticamente todas las demostraciones.\subsection*{Igualdad $(A \iff B)$}
@@ -227,7 +227,27 @@ Representa el $\iff$ (sí y solo sí) de la lógica proposicional. Recordemos qu
 \begin{itemize}
     \item La manera de demostrar esto es viendo si se cumple que $A \subseteq B \ y \ B \subseteq A$
 \end{itemize}
-Cada fila se puede generalizar para un x cualquiera en las operacines lógicas. 
+Cada fila se puede generalizar para un x cualquiera en las operaciones lógicas. 
+\subsection*{Leyes de De Morgan}
+La forma más fácil de verlo es que se distribuye el complemento y se invierte la operación.
+\begin{itemize}
+    \item $(A \cup B)^{c} = A^{c} \cap B^{c}$
+    \item $(A \cap B)^{c} = A^{c} \cup B^{c}$
+\end{itemize}
+\subsection*{Propiedades de Conjuntos}
+\begin{itemize}
+    \item Distributiva: $A \cap (B \cup C) = (A \cap B) \cup (A \cap C)$
+    \item Conmutatividad: $A \cap B = B \cap A $ Igual para unión
+    \item Conjuntos Disjuntos $ A \cap B = \emptyset$
+\end{itemize}
+TODO: Agregar en Anexo demostración de distributividad.
+\subsection*{Producto Cartesiano ($A X B$)}
+Sean dos conjuntos A y B cualquiera. El producto cartesiano es el par ordenado (c, d) con $c \in A$ y $d \in B$. \\ 
+La cantidad de elementos máxima en un producto cartesiano es = $\#A \ast \#B$. \\
+Sí o sí es necesario que el par NO sea nulo, es decir, deben ser elementos válidos. \\
+\textbf{Importante}: AXB $\neq$ BXA \\
+Ej.: $A = \{1, 2, 3\}, B = \emptyset, AXB = \emptyset$, pues B está vacío. \\
+Ej.: $A = \{1, 2, 3\}, B = \{4, 5\}, \#AXB = 6, AXB = \{\{1, 4\}, \{1, 5\}, \{2, 4\}, \{2, 5\}, \{3, 4\}, \{3, 5\} \}$
 \section*{Anexo}
 \subsection*{Pertenencia en Conjuntos}
 \label{subsec:pertenecencia_conjuntos}
