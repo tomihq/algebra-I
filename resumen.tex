@@ -380,14 +380,8 @@ Algunas propiedades:
     \item Distributividad: $m(n+k) = mn + mk$
 \end{itemize}
 \subsection*{Sumatoria}
-Permite indicar claramente cuantas veces hay que sumar algo dado. \\
-$ a_{1} + a_{2} + a_{3} + ... + a_{n-1} + a_{n} \equiv \sum_{i=1}^{n}{a_{i}}$ \\
+Permite indicar claramente cuantas veces hay que sumar algo dado: $ a_{1} + a_{2} + a_{3} + ... + a_{n-1} + a_{n} \equiv \sum_{i=1}^{n}{a_{i}}$ \\
 Los límites superior e inferior de la sumatoria son \textbf{inclusivos} por lo tanto, el último caso es $i=n$.
-\subsection*{Suma de Gauss}
-Un poco de contexto: ¿como hacemos para sumar los n números naturales? utilizamos la suma de gauss. \\
-Es súper útil conocer esto porque he visto lugares donde suman los primeros n elementos utilizando un for. \\
-\[\sum_{i=1}^{n}{i} = \frac{n(n+1)}{2} \] 
-\textbf{Importante}: en la materia se utiliza todo el tiempo, por lo tanto no se recomienda memorizarla pero sí entenderla.
 Algunos casos bastante comunes:
 \begin{itemize}
     \item Sumar 1 n veces: \[\sum_{i=0}^{n}{1} = n\]
@@ -404,10 +398,31 @@ Nótese que en ambos se hace la misma cantidad de operaciones aunque hayamos qui
     \item \textbf{Extraer términos}: $\sum_{k=1}^{2^{n+1}}{k^{2}} \equiv \sum_{k=1}^{2^{n} \ast 2}{k^{2}} \equiv \sum_{k=1}^{2^{n}}{k^{2}} + \sum_{k=2^{n}+1}^{2^{n+1}}{k^{2}} $, útil en inducción, lo veremos más adelante.
     \item \textbf{Agregar término}: $\sum_{i=k+1}^{n}{2i+1} \equiv (\sum_{i=k}^{n}{2i+1}) - 2(k+1)+1$, útil en inducción, lo que hacemos es que al agregar un término, se lo restamos en la suma final pues solo agregamos ese término por comodidad pero no se nos pedía en la suma original.
 \end{itemize}
+\subsection*{Suma de Gauss}
+Un poco de contexto: ¿como hacemos para sumar los n números naturales? utilizamos la suma de gauss. \\
+Es súper útil conocer esto porque he visto lugares donde suman los primeros n elementos utilizando un for. \\
+\[\sum_{i=1}^{n}{i} = \frac{n(n+1)}{2} \] 
+\textbf{Importante}: en la materia se utiliza todo el tiempo, por lo tanto no se recomienda memorizarla pero sí entenderla.
 \subsection*{Serie Geométrica}
 Un poco de contexto: ¿cómo hacemos para sumar los n términos que solo cambia el valor de la potencia? utilizamos la serie geométrica. \\
 La serie geométrica se separa en dos casos, cuando $q=1$ y cuando $q\neq 1$
 \[Q = \sum_{i=0}^{n}{q^{i}} = \left\{ \begin{array}{lcc} \frac{q^{n+1}-1}{q-1} & si & q \neq 1 \\ \\ n+1 & si & q = 1 \end{array} \right.\]
+\subsection*{Productoria}
+Mismo que la sumatoria pero de multiplicación: $ a_{1} \ast a_{2} \ast a_{3} \ast ... \ast a_{n-1} \ast a_{n} \equiv \prod_{i=1}^{n}{a_{i}}$ \\
+\textbf{Importante}: en la materia se utiliza todo el tiempo, por lo tanto no se recomienda memorizarla pero sí entenderla. \\
+Algunos casos bastante comunes:
+\begin{itemize}
+    \item Multiplicar los n términos: \[\prod_{i=1}^{n}{i} = n!\]
+    \item Exponenciación: \[\prod_{i=1}^{n}{c} = c^{n}\]
+\end{itemize}
+\textbf{Importante}: Al igual que en la sumatoria, podemos manipular los límites superior e inferior. \\
+\textbf{Propiedades de la Productoria}: 
+\begin{itemize}
+    \item \textbf{Juntar productorias}: $\prod_{k=1}^{n}{a_{k}} + \prod_{k=1}^{n}{b_{k}}  \equiv \prod_{k=1}^{n}{a_{k} + b_{k}} $, como ambos van desde k = 1 hasta un n dado y los términos van en sincronía con k podemos juntarlos en una sola productoria.
+    \item \textbf{Quitar constante}: $\prod_{k=1}^{n}{c \ast a_{k}} \equiv c^{n} \ast \prod_{k=1}^{n}{a_{k}}$
+    \item \textbf{Factor común}: $\prod_{k=1}^{n}{\alpha \ast a_{i} \ast b_{i}} \equiv  \alpha^{n} \ast \prod_{k=1}^{n}{a_{i} \ast b_{i}} \equiv \alpha^{n} \ast \prod_{k=1}^{n}{a_{i}} \ast \prod_{k=1}^{n}{b_{i}} $
+    \item \textbf{Agregar término}: $\prod_{i=k+1}^{n}{2i+1} \equiv (\prod_{i=k}^{n}{2i+1}) \ast \frac{1}{2(k+1)+1}$, útil en inducción, lo que hacemos es que al agregar un término. Como acá es una productoria lo que hacemos es "dividir" en vez de restar, que a su vez dividir es multiplicar por 1/algo.
+\end{itemize}
 \section*{Anexo}
 \subsection*{Pertenencia en Conjuntos}
 \label{subsec:pertenecencia_conjuntos}
