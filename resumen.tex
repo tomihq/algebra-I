@@ -431,14 +431,56 @@ Nos permite poder probar cosas utilizando el álgebra. Es muy útil cuando neces
     \item $Si \ k \in S \implies k+1 \in S$
 \end{itemize}
 La inducción se la puede ver como una especie de dominó, necesitamos probar que si tiramos el primer dominó, caen todos los demás automáticamente. \\
-La Inducción consiste en: 
+Lo primero que hacemos es probar un caso base, y luego el paso inductivo. 
 \begin{itemize}
     \item Caso Base (CB) (tirar el primer dominó): Acá estamos viendo si con la "fórmula" que queremos probar verdadera para todo natural el primer caso funciona.
-    \item Hipótesis Inductiva (HI): lo que asumo como verdadero, mi "fórmula".
-    \item Quiero Probar Que (QPQ): En donde aplico la Hipótesis inductiva para ver si el término siguiente o todos los siguientes siempre son verdaderos.
+    \item Paso Inductivo
+    \begin{itemize}
+        \item Hipótesis Inductiva (HI): lo que asumo como verdadero, mi "fórmula".
+        \item Quiero Probar Que (QPQ): En donde aplico la Hipótesis inductiva para ver si el término siguiente o todos los siguientes siempre son verdaderos.
+    \end{itemize}
 \end{itemize}
+Básicamente, lo que queremos probar es que: $P(1) \implies P(2) \implies P(3) ... \ P(n)$ sean todos verdaderos. Con un caso falso, la proposición es refutada pues quedaría algo como $V \implies F \implies ...$ y como sabemos $V \implies F$ directamente mata todo pues es falso. \\ \\
+\textbf{Importante}: En el paso inductivo, la variable que usemos es un \textbf{natural fijo}. Por lo tanto, al terminar la inducción, si es verdadero para k y lo que hayamos querido probar tenemos que predicar sobre n aparte.
 \subsection*{Inducción Simple}
-
+Comenzamos probando desde n=1 o n=0. Esto es súper importante porque a partir de n=2 ya es inducción corrida (lo vemos más adelante). \\
+\textbf{Caso Base}: P(1) se cumple \\
+\textbf{Paso Inductivo}: Sea $ k \in \nat$
+\begin{itemize}
+    \item \textbf{HI}: P(k) V
+    \item \textbf{QPQ}: P(k+1) es V
+\end{itemize}
+Si llego a lo que quería, es decir, P(k+1) vale entonces P(k) vale y P(n) vale $\forall n \in \nat$ \\ \\
+\textbf{Importante}: Notar que la HI y la QPQ hablamos de un k, pero a la hora de llegar a la conclusión hablamos de n. Esto es porque el \textbf{k está fijo} y es nuestro "natural" de laboratorio. \\
+Véase \hyperref[subsec:induccion_simple]{\underline{anexo}} para ver ejemplos.
+\subsection*{Inducción Corrida}
+Comenzamos probando desde n>1. Los n que queremos probar deben ser mayores que un m dado. Es importante notar que como los casos anteriores no nos importan, los asumimos como verdaderos porque como no hablamos de ellos las implicancias quedan falsas. \\
+Ej.: Si me piden probar desde $n>3$ entonces tengo que considerar todos los $n>m$ donde m es 3 e indica que los primeros 3 casos no nos importan. Por lo tanto las implicaciones falsas terminan dando verdadero. \\
+\[P(1) \implies P(2) \implies P(3) \implies P(4) \equiv F \implies F \implies F \implies ? \equiv ? \]
+Nótese que ? es lo que justamente queremos probar en el caso base, necesitamos tirar a partir del caso P(4) que no sabemos si todavía es verdadero. \\
+\textbf{Caso Base}: P(n) se cumple con $m>1$ \\
+\textbf{Paso Inductivo}: Sea $ k \in \nat>=m $
+\begin{itemize}
+    \item \textbf{HI}: P(k)
+    \item \textbf{QPQ}: P(k+1)
+\end{itemize}
+\textbf{Importante}: En el paso inductivo no hablo de ninguna restricción de k porque ya está limitado en el caso base. \\
+Si llego a lo que quería, es decir, P(k+1) vale entonces P(k) vale $\forall n \in \nat >= m$ y P(n) vale $\forall n \in \nat >= m$ \\
+Véase \hyperref[subsec:induccion_corrida]{\underline{anexo}} para ver ejemplos.
+\subsection*{Sucesiones Definidas por Recurrencia}
+Hablamos de recurrencia cuando para calcular un nuevo término necesito el/los término/s anterior/es.  \\
+Este tipo de inducción son un poco más complicada porque tenemos que buscar una fórmula cerrada, más que nada porque los datos que nos afrontamos son solamente una guía para entender como evoluciona la secuencia a lo largo del tiempo. \\
+Las Sucesiones Definidas por Recurrencia tienen esta pinta:
+\[\left\{ \begin{array}{lcc} a_{1} = x  \\ a_{n+1} = a_{n} \end{array} \right.\]
+La sucesión definida anteriormente tiene muchas variables, por lo tanto no se considera una fórmula cerrada.  \\
+Una fórmula cerrada es aquella fórmula que con solo dar una variable, podemos obtener un resultado. \\
+\textbf{Caso Base}: P(n) se cumple \\
+\textbf{Paso Inductivo}: Sea $ k \in \nat>=m $
+\begin{itemize}
+    \item \textbf{HI}: P(k)
+    \item \textbf{QPQ}: P(k+1) 
+\end{itemize}
+Véase \hyperref[subsec:sucesiones_recurrencia]{\underline{anexo}} para ver ejemplos.
 \section*{Anexo}
 \subsection*{Pertenencia en Conjuntos}
 \label{subsec:pertenecencia_conjuntos}
@@ -468,6 +510,11 @@ Algunos ejemplos utilizando cuantificadores
     \item $\neg \ \exists x \in A \ \symbol{92} \ x \% 2 \neq 0$ (No existe ningún impar en A) 
     \item $ \exists x \in A \ \symbol{92} x = 4$ (Existe un elemento en A que es exactamente 4)
 \end{itemize}
-
+\subsection*{Inducción Simple}
+\label{subsec:induccion_simple}
+\subsection*{Inducción Corrida}
+\label{subsec:induccion_corrida}
+\subsection*{Sucesiones Definidas por Recurrencia}
+\label{subsec:sucesiones_recurrencia}
 \end{document} 
 
