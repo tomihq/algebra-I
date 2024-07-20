@@ -370,7 +370,7 @@ Decimos que una función f es inversible si es biyectiva y hay una función g ta
     \item $gof = I_{A}$
 \end{itemize}
 Y en ese caso decimos que g es inversa de f. \\
-\section*{Naturales - Inducción}
+\section*{Naturales - Sumatoria - Productoria}
 \subsection*{Números Naturales}
 Son un conjunto infinito. \\
 Algunas propiedades:
@@ -423,6 +423,22 @@ Algunos casos bastante comunes:
     \item \textbf{Factor común}: $\prod_{k=1}^{n}{\alpha \ast a_{i} \ast b_{i}} \equiv  \alpha^{n} \ast \prod_{k=1}^{n}{a_{i} \ast b_{i}} \equiv \alpha^{n} \ast \prod_{k=1}^{n}{a_{i}} \ast \prod_{k=1}^{n}{b_{i}} $
     \item \textbf{Agregar término}: $\prod_{i=k+1}^{n}{2i+1} \equiv (\prod_{i=k}^{n}{2i+1}) \ast \frac{1}{2(k+1)+1}$, útil en inducción, lo que hacemos es que al agregar un término. Como acá es una productoria lo que hacemos es "dividir" en vez de restar, que a su vez dividir es multiplicar por 1/algo.
 \end{itemize}
+\section*{Inducción}
+Nos permite poder probar cosas utilizando el álgebra. Es muy útil cuando necesitamos predicar que a partir de cierto valor una proposición se cumple siempre. Un conjunto inductivo es solamente $\nat$ \\
+\textbf{Principio de Inducción}: Un subconjunto S de $\nat$ es inductivo si 
+\begin{itemize}
+    \item $1 \in S$
+    \item $Si \ k \in S \implies k+1 \in S$
+\end{itemize}
+La inducción se la puede ver como una especie de dominó, necesitamos probar que si tiramos el primer dominó, caen todos los demás automáticamente. \\
+La Inducción consiste en: 
+\begin{itemize}
+    \item Caso Base (CB) (tirar el primer dominó): Acá estamos viendo si con la "fórmula" que queremos probar verdadera para todo natural el primer caso funciona.
+    \item Hipótesis Inductiva (HI): lo que asumo como verdadero, mi "fórmula".
+    \item Quiero Probar Que (QPQ): En donde aplico la Hipótesis inductiva para ver si el término siguiente o todos los siguientes siempre son verdaderos.
+\end{itemize}
+\subsection*{Inducción Simple}
+
 \section*{Anexo}
 \subsection*{Pertenencia en Conjuntos}
 \label{subsec:pertenecencia_conjuntos}
