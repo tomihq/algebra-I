@@ -456,18 +456,18 @@ Véase \hyperref[subsec:induccion_simple]{\underline{anexo}} para ver ejemplos.
 \subsection*{Inducción Doble}
 Es exactamente lo mismo que en la Inducción Simple solo que acá tenemos que demostrar que 2 casos base son verdaderos. Luego, tenemos 2 hipótesis inductivas que las tenemos que usar en nuestro qpq.
 \subsection*{Inducción Corrida}
-Comenzamos probando desde n>1. Los n que queremos probar deben ser mayores que un m dado. Es importante notar que como los casos anteriores no nos importan, los asumimos como verdaderos porque como no hablamos de ellos las implicancias quedan falsas. \\
-Ej.: Si me piden probar desde $n>3$ entonces tengo que considerar todos los $n>m$ donde m es 3 e indica que los primeros 3 casos no nos importan. Por lo tanto las implicaciones falsas terminan dando verdadero. \\
+Sea $n_{0}$ un $n>1 \in \nat$ \\
+Ej.: Si me piden probar desde $n>3$ entonces tengo que considerar los naturales a partir de $n_{0}$. Los $n<n_{0}$ no nos importan. Por lo tanto las implicaciones falsas terminan dando verdadero. \\
 \[P(1) \implies P(2) \implies P(3) \implies P(4) \equiv F \implies F \implies F \implies ? \equiv ? \]
 Nótese que ? es lo que justamente queremos probar en el caso base, necesitamos tirar a partir del caso P(4) que no sabemos si todavía es verdadero. \\
-\textbf{Caso Base}: P(n) se cumple con $m>1$ \\
-\textbf{Paso Inductivo}: Sea $ k \in \nat>=m $
+\textbf{Caso Base}: P($n_{0}$) se cumple con $n_{0}>n$ \\
+\textbf{Paso Inductivo}: Sea $ k \in \nat\ge n_{0} $
 \begin{itemize}
     \item \textbf{HI}: P(k)
     \item \textbf{QPQ}: P(k+1)
 \end{itemize}
 \textbf{Importante}: En el paso inductivo no hablo de ninguna restricción de k porque ya está limitado en el caso base. \\
-Si llego a lo que quería, es decir, P(k+1) vale entonces P(k) vale $\forall n \in \nat >= m$ y P(n) vale $\forall n \in \nat >= m$ \\
+Si llego a lo que quería, es decir, P(k+1) vale entonces P(k) vale $\forall n \in \nat \ge n_{0}$ y P(n) vale $\forall n \in \nat \ge n_{0}$ \\
 Véase \hyperref[subsec:induccion_corrida]{\underline{anexo}} para ver ejemplos.
 \subsection*{Sucesiones Definidas por Recurrencia}
 Hablamos de recurrencia cuando para calcular un nuevo término necesito el/los término/s anterior/es.  \\
@@ -477,7 +477,7 @@ Las Sucesiones Definidas por Recurrencia tienen esta pinta:
 La sucesión definida anteriormente tiene muchas variables, por lo tanto no se considera una fórmula cerrada.  \\
 Una fórmula cerrada es aquella fórmula que con solo dar una variable, podemos obtener un resultado. \\
 \textbf{Caso Base}: P(n) se cumple \\
-\textbf{Paso Inductivo}: Sea $ k \in \nat>=m $
+\textbf{Paso Inductivo}: Sea $ k \in \nat\ge m $
 \begin{itemize}
     \item \textbf{HI}: P(k)
     \item \textbf{QPQ}: P(k+1) 
@@ -488,6 +488,9 @@ Este tipo de inducción consiste en, por cada término que queremos probar, nece
 Esto normalmente se da con sucesiones en forma de recurrencia. \\
 \textbf{Ej.}: $ a_{1} = 5, a_{n+2} = 5a_{n+1} - 6a_{n}$ debe ser probado con inducción completa pues necesitamos para cada término, sus dos anteriores. \\
 \textbf{Importantísimo}: Es posible que haya casos donde podemos aplicar distintos tipos de inducción, es decir, puede que podamos aplicar inducción global en un caso, pero sea más fácil de resolver utilizando inducción simple.
+Véase \hyperref[subsec:induccion_completa]{\underline{anexo}} para ver ejemplos.
+\subsection*{Inducción Completa/Global Corrida}
+Comenzamos probando desde un n>1. Lo demás es igual que la Inducción Completa/Global.
 \subsection*{Cantidad de Casos Base}
 La cantidad de casos base que necesitamos viene directamente de lo que necesitamos para probar nuestra hipótesis.
 \begin{itemize}
@@ -496,6 +499,17 @@ La cantidad de casos base que necesitamos viene directamente de lo que necesitam
     \begin{itemize}
         \item $ a_{1} = 5, a_{n+2} = 5a_{n+1} - 6a_{n}$. Necesitamos dos casos base pues el segundo término depende de sus dos anteriores y ambos deben ser verdaderos.
         \item Una sumatoria tipo $ \sum_{i=0}^{n}{a_{i}}$ tiene un solo caso base porque necesitamos solamente tirar el primero para que arranquen los demás, no necesito ningún anterior. Sin embargo, esta inducción es global porque necesito todos los anteriores en cada paso.
+    \end{itemize}
+\end{itemize}
+\subsection*{Desigualdades}
+Acá dejo algunas cosas comúnes que se van a utilizar en inducción por desigualdades.
+\begin{itemize}
+    \item Se puede pasar lo que yo quiera de izquierda a derecha.
+    \item Solo cambia el sentido de la desigualdad si multiplico por -1.
+    \item Siempre debo dejar expresiones simples a comparar
+    \begin{itemize}
+        \item $k^{2} + k + k \ge k+1$, es muy dificil de leer.
+        \item $k^{2} \ge 0$ es más fácil de leer y dice lo mismo que la de arriba.
     \end{itemize}
 \end{itemize}
 \section*{Anexo}
@@ -533,5 +547,7 @@ Algunos ejemplos utilizando cuantificadores
 \label{subsec:induccion_corrida}
 \subsection*{Sucesiones Definidas por Recurrencia}
 \label{subsec:sucesiones_recurrencia}
+\subsection*{Inducción Completa/Global}
+\label{subsec:induccion_completa}
 \end{document} 
 
