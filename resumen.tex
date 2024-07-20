@@ -371,7 +371,43 @@ Decimos que una función f es inversible si es biyectiva y hay una función g ta
 \end{itemize}
 Y en ese caso decimos que g es inversa de f. \\
 \section*{Naturales - Inducción}
-
+\subsection*{Números Naturales}
+Son un conjunto infinito. \\
+Algunas propiedades:
+\begin{itemize}
+    \item Conmutatividad: $ m+n = n+m$
+    \item Asociatividad: $(m+n)+k = m+(n+k)$ y $ (m\ast n)\ast k = m\ast (n\ast k)$
+    \item Distributividad: $m(n+k) = mn + mk$
+\end{itemize}
+\subsection*{Sumatoria}
+Permite indicar claramente cuantas veces hay que sumar algo dado. \\
+$ a_{1} + a_{2} + a_{3} + ... + a_{n-1} + a_{n} \equiv \sum_{i=1}^{n}{a_{i}}$ \\
+Los límites superior e inferior de la sumatoria son \textbf{inclusivos} por lo tanto, el último caso es $i=n$.
+\subsection*{Suma de Gauss}
+Un poco de contexto: ¿como hacemos para sumar los n números naturales? utilizamos la suma de gauss. \\
+Es súper útil conocer esto porque he visto lugares donde suman los primeros n elementos utilizando un for. \\
+\[\sum_{i=1}^{n}{i} = \frac{n(n+1)}{2} \] 
+\textbf{Importante}: en la materia se utiliza todo el tiempo, por lo tanto no se recomienda memorizarla pero sí entenderla.
+Algunos casos bastante comunes:
+\begin{itemize}
+    \item Sumar 1 n veces: \[\sum_{i=0}^{n}{1} = n\]
+    \item Sumar los n términos: \[\sum_{i=0}^{n}{i} = \frac{n(n+1)}{2}\]
+\end{itemize}
+\textbf{Importante}: Es posible manejar los términos de la sumatoria manipulando los límites. \\
+Ej.: \[\sum_{i=\textbf{0}}^{\textbf{n+1}}{i} \equiv \sum_{\textbf{i=1}}^{\textbf{n}}{i} \] 
+Nótese que en ambos se hace la misma cantidad de operaciones aunque hayamos quitado el n+1 y empezar la sumatoria desde 1 e ir hasta n, pero en el caso de la sumatoria de la derecha podemos aplicar un algoritmo conocido. \\
+\textbf{Propiedades de la Sumatoria}: 
+\begin{itemize}
+    \item \textbf{Juntar sumatorias}: $\sum_{k=1}^{n}{a_{k}} + \sum_{k=1}^{n}{b_{k}}  \equiv \sum_{k=1}^{n}{a_{k} + b_{k}} $, como ambos van desde k = 1 hasta un n dado y los términos van en sincronía con k podemos juntarlos en una sola sumatoria.
+    \item \textbf{Distribución denominador en suma}: $\sum_{k=1}^{n}{\frac{a+b+c}{d+c}} \equiv \sum_{k=1}^{n}{\frac{a}{d+c} + \frac{b}{d+c} + \frac{c}{d+c}}$
+    \item \textbf{Quitar constante}: $\sum_{k=1}^{n}{c \ast a_{k}} \equiv c \ast \sum_{k=1}^{n}{a_{k}}$
+    \item \textbf{Extraer términos}: $\sum_{k=1}^{2^{n+1}}{k^{2}} \equiv \sum_{k=1}^{2^{n} \ast 2}{k^{2}} \equiv \sum_{k=1}^{2^{n}}{k^{2}} + \sum_{k=2^{n}+1}^{2^{n+1}}{k^{2}} $, útil en inducción, lo veremos más adelante.
+    \item \textbf{Agregar término}: $\sum_{i=k+1}^{n}{2i+1} \equiv (\sum_{i=k}^{n}{2i+1}) - 2(k+1)+1$, útil en inducción, lo que hacemos es que al agregar un término, se lo restamos en la suma final pues solo agregamos ese término por comodidad pero no se nos pedía en la suma original.
+\end{itemize}
+\subsection*{Serie Geométrica}
+Un poco de contexto: ¿cómo hacemos para sumar los n términos que solo cambia el valor de la potencia? utilizamos la serie geométrica. \\
+La serie geométrica se separa en dos casos, cuando $q=1$ y cuando $q\neq 1$
+\[Q = \sum_{i=0}^{n}{q^{i}} = \left\{ \begin{array}{lcc} \frac{q^{n+1}-1}{q-1} & si & q \neq 1 \\ \\ n+1 & si & q = 1 \end{array} \right.\]
 \section*{Anexo}
 \subsection*{Pertenencia en Conjuntos}
 \label{subsec:pertenecencia_conjuntos}
