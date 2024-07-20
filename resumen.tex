@@ -453,6 +453,8 @@ Comenzamos probando desde n=1 o n=0. Esto es súper importante porque a partir d
 Si llego a lo que quería, es decir, P(k+1) vale entonces P(k) vale y P(n) vale $\forall n \in \nat$ \\ \\
 \textbf{Importante}: Notar que la HI y la QPQ hablamos de un k, pero a la hora de llegar a la conclusión hablamos de n. Esto es porque el \textbf{k está fijo} y es nuestro "natural" de laboratorio. \\
 Véase \hyperref[subsec:induccion_simple]{\underline{anexo}} para ver ejemplos.
+\subsection*{Inducción Doble}
+Es exactamente lo mismo que en la Inducción Simple solo que acá tenemos que demostrar que 2 casos base son verdaderos. Luego, tenemos 2 hipótesis inductivas que las tenemos que usar en nuestro qpq.
 \subsection*{Inducción Corrida}
 Comenzamos probando desde n>1. Los n que queremos probar deben ser mayores que un m dado. Es importante notar que como los casos anteriores no nos importan, los asumimos como verdaderos porque como no hablamos de ellos las implicancias quedan falsas. \\
 Ej.: Si me piden probar desde $n>3$ entonces tengo que considerar todos los $n>m$ donde m es 3 e indica que los primeros 3 casos no nos importan. Por lo tanto las implicaciones falsas terminan dando verdadero. \\
@@ -481,6 +483,21 @@ Una fórmula cerrada es aquella fórmula que con solo dar una variable, podemos 
     \item \textbf{QPQ}: P(k+1) 
 \end{itemize}
 Véase \hyperref[subsec:sucesiones_recurrencia]{\underline{anexo}} para ver ejemplos.
+\subsection*{Inducción Completa/Global}
+Este tipo de inducción consiste en, por cada término que queremos probar, necesitamos ver que efectivamente todos los anteriores valgan. Es decir, si llegamos a estar probando n=10 entonces tenemos que efectivamente verificar de vuelta que n=1, n=2 sean verdaderos. \\
+Esto normalmente se da con sucesiones en forma de recurrencia. \\
+\textbf{Ej.}: $ a_{1} = 5, a_{n+2} = 5a_{n+1} - 6a_{n}$ debe ser probado con inducción completa pues necesitamos para cada término, sus dos anteriores. \\
+\textbf{Importantísimo}: Es posible que haya casos donde podemos aplicar distintos tipos de inducción, es decir, puede que podamos aplicar inducción global en un caso, pero sea más fácil de resolver utilizando inducción simple.
+\subsection*{Cantidad de Casos Base}
+La cantidad de casos base que necesitamos viene directamente de lo que necesitamos para probar nuestra hipótesis.
+\begin{itemize}
+    \item En Inducción Doble son dos.
+    \item En Inducción Completa/Global depende de la cantidad de términos que se usen para $"tirar"$ el primer dominó.
+    \begin{itemize}
+        \item $ a_{1} = 5, a_{n+2} = 5a_{n+1} - 6a_{n}$. Necesitamos dos casos base pues el segundo término depende de sus dos anteriores y ambos deben ser verdaderos.
+        \item Una sumatoria tipo $ \sum_{i=0}^{n}{a_{i}}$ tiene un solo caso base porque necesitamos solamente tirar el primero para que arranquen los demás, no necesito ningún anterior. Sin embargo, esta inducción es global porque necesito todos los anteriores en cada paso.
+    \end{itemize}
+\end{itemize}
 \section*{Anexo}
 \subsection*{Pertenencia en Conjuntos}
 \label{subsec:pertenecencia_conjuntos}
