@@ -132,7 +132,8 @@ Es exactamente igual como en la lógica proposicional. La intersección es un $"
 \end{table} \\
 Cada fila se puede generalizar para un x cualquiera en las operaciones lógicas. \\
 \textbf{Ej.}: Si $x \in A \land x \in B$ entonces $ x \in A \cap B$ esto claramente nos dice que estamos en el caso de la fila 1. \\
-\textbf{Ej.}: Si $x \notin A \land x \in B$ entonces $ x \notin A \cap B$ esto claramente nos dice que estamos en el caso de la fila 3.
+\textbf{Ej.}: Si $x \notin A \land x \in B$ entonces $ x \notin A \cap B$ esto claramente nos dice que estamos en el caso de la fila 3. \\
+\textbf{Importante}: Si la intersección entre dos conjuntos es vacía $(\emptyset)$ se dice que son conjuntos disjuntos.
 \subsection*{Complemento $(A \cap B)$}
 En la lógica proposicional, el complemento es la negación. Lo que está en un conjunto universal V pero no en el conjunto.
 \begin{table}[h!]
@@ -512,6 +513,45 @@ Acá dejo algunas cosas comúnes que se van a utilizar en inducción por desigua
         \item $k^{2} \ge 0$ es más fácil de leer y dice lo mismo que la de arriba.
     \end{itemize}
 \end{itemize}
+\section*{Combinatoria}
+El arte de contar. Un tema bueno, pero que no se le dedica el suficiente tiempo como para asimilar las cosas.
+\begin{itemize}
+    \item Unión de Conjuntos Disjuntos: $\#A\cup B = \#A + \#B $. Como no tienen elementos en común (intersección vacía), no estamos sumando ningún repetido. 
+    \item Principio Inclusión Exclusión: $\#A\cup B = \#A + \#B - \#A\cap B  $. Como A y B tienen elementos en común, eliminamos los repetidos.
+    \item Diferencia de Conjunto Incluido en otro: $\#A-B = \#A-\#B$. Acá B está dentro de A, por lo tanto, eliminamos los elementos de B de A.
+    \item Diferencia: $\#A-B = \#A - \#A\cap B$. Nos quedamos solo con los elementos de A
+    \item Diferencia Simétrica: $\#(A\triangle B) = \#A + \#B - 2\#(A \cap B)$
+    \item Total de casos independientes: $\#(AxB) = \#A \ast \#B $ 
+\end{itemize}
+\textbf{Importantísimo}: Cuando hacemos cálculos con cardinales, lo más cómodo es quedarnos solamente con las intersecciones pues es más fácil de manipular. Esto es porque la unión es verdadera en varios casos, está en A o está en B o en ambos. En la intersección solo es verdadera si está en ambas.
+\subsection*{Casos sin condiciones}
+\textbf{Ej. 1}: ¿Cuántos pares puedo armar con $ A = \{2, 4\}, B = \{1, 3\}$? \\
+Básicamente lo que nos pide el ejemplo es ver cuantas combinaciones entre los elementos de A y B hay. \\
+Lo que podemos saber es que tengo que armar pares que puedan ser de la forma (A, A), (A, B), (B, A), (B, B) \\
+¿Cuantas posibilidades, para cada elemento tenemos en cada lugar? 4 en cada uno. \\
+Entonces, el cálculo sale de hacer (4, 4), que esto lo traducimos a $ 4 \ast 4 = 16$. Entonces hay 16 posibles pares con los elementos de A y B. \\
+
+\textbf{Ej. 2}: Mismo caso que el anterior, pero que ahora solo los pares sean de la forma (A, B). \\
+Si los pares ahora son de la forma (A, B) son parecidos al producto cartesiano, es decir, voy a tener (2, 2) posibilidades. \\
+Entonces, el cálculo sale de hacer $2 \ast 2 = 4$. Entonces hay 4 posibles pares, y estos son: $\{(2, 1), (2, 3), (4, 1), (4, 3)\}$ \\
+
+En este tipo de ejemplos hablamos de cálculos \textbf{sin condiciones} porque utilizamos todo el conjunto de valores.
+\subsection*{Casos con condiciones}
+\textbf{Ej. 1}: Dado $A = \{1, ..., 10\}$ calcule la cantidad de elementos de B sabiendo que $ B = \{(a, b) \in AxA, a \neq b\}$ \\
+En este caso, podemos ver que si bien vamos a utilizar todos los valores de A, seguramente haya combinaciones que no nos sirvan. B no va a tener pares donde el primer elemento sea igual al segundo. \\
+Por lo tanto, habría que excluir casos como: $(1, 1), (2, 2), (3, 3) \ ...\ (10, 10)$ \\
+En este caso es fácil, porque como los números son acotados (10) sabemos que pares repetidos va a haber 10, es decir, 1 por cada número. \\
+Entonces la idea sería, que hay $(10, 10) - 10$ pero ¿de donde salió esto?, sale de considerar que va a haber pares de números que puedan tener los 10 posibles valores de A, y luego, se restan la cantidad de posibilidades de que salgan repetidos. \\
+Entonces, el cálculo sale de hacer $10 \ast 10 = 100 - 10 = 90$. \\
+Este tipo de casos, lo podemos generalizar diciendo que $"gastamos"$ uno de los valores, luego, quedaría $(10 ops, 9 ops) = 9 \ast 10$. Como estamos reduciendo las opciones para el segundo lugar, estamos garantizando que no esté el mismo valor que estaba en el primer lugar.
+\subsection*{Casos donde calculamos un total, en base a varios grupos}
+\textbf{Ej. 1}: Dado $A = \{1, ..., 10\}$ calcule la cantidad de subconjuntos en C sabiendo que $ C = \{(a, b) \in AxA; \ a > b\}$ \\
+En este caso, podemos ver que los pares que hay que armar nos dicen que tenemos que la primera coordenada debe ser mayor a la segunda. Con un análisis rápido podemos ver que el grupo que tendrá mas elementos será el del 10, porque el 10 es mayor que el 1, 2, 3, 4, 5, 6, 7, 8 y el 9. \\
+Los casos serían algo así (1, 0 op. disp), (2, 1 op. disp), (3, 2 op. disp), ... (10, 9 op. disp) \\
+Entonces, el cálculo sale de hacer $\frac{9 \ast 10}{2}$ donde 9 es la cantidad de grupos de elementos que tendremos (nótese que el 1 no lo contamos xq no es mayor que ninguno) y el 10 es la cantidad de elementos que tenemos para elegir. Es importante tambien notar, que estamos dividiendo por 2 porque los casos como $(2, 1) = (1, 2)$ en conjuntos son idénticos. 
+\subsection*{Permutaciones}
+Sea A que tiene n elementos, una permutación es un conjunto de longitud n ordenado distinto que A. Básicamente, cambiar el orden de los elementos. \\
+$Ej.$: $ A = \{1, 2, 3\}$ las permutaciones de A son $\{1, 3, 2\}, \{2, 1, 3\}, \{2, 3, 1\}, \{3, 1, 2\}, \{3, 2, 1\}$ 
 \section*{Anexo}
 \subsection*{Pertenencia en Conjuntos}
 \label{subsec:pertenecencia_conjuntos}
@@ -529,7 +569,7 @@ Sí, lo es pues $1 \in A$ y $ 3 \in A$ \\
 \textbf{Ex. 2}: Sea $A = \{1, \{1, 4\}, 3, 10\}$
 \begin{itemize}
     \item $ \{1, 4\} \nsubseteq A $ pues no existen 1 y 4 como elementos en A
-    \item $ \{1, 4\} \in A $ pues $\{1, 4\} es un elemento de A$
+    \item $ \{1, 4\} \in A $ pues $\{1, 4\}$ es un elemento de A
     \item $\{1, 3\} \subseteq A$ pues $ 1 \in A, 3 \in A$, lo mismo sucede con $ \{1, 10\} \ o \ \{3, 10\}$
 \end{itemize}
 \subsection*{Cuantificadores}
