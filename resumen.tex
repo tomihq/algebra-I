@@ -259,7 +259,9 @@ Sí o sí es necesario que el par NO sea nulo, es decir, deben ser elementos vá
 \textbf{Ej.}: $A = \{1, 2, 3\}, B = \{4, 5\}, \#AXB = 6, AXB = \{\{1, 4\}, \{1, 5\}, \{2, 4\}, \{2, 5\}, \{3, 4\}, \{3, 5\} \}$
 \section*{Relaciones}
 Sean A y B conjuntos. Una relación A en B es un subconjunto cualquiera R de AXB. \\
-\textbf{Ej.}: $A = \{1\}, B = \{4, 5\}, AXB=\{\{1, 4\}, \{1, 5\}\}, R = \{(1, 1), (1, 2), (1, 4)\}$ ¿Es R una relación válida de AXB? No, no lo es pues $(1, 1) \in R$ pero $ (1, 1) \notin AXB$
+\textbf{Ej.}: $A = \{1\}, B = \{4, 5\}, AXB=\{\{1, 4\}, \{1, 5\}\}, R = \{(1, 1), (1, 2), (1, 4)\}$ ¿Es R una relación válida de AXB? No, no lo es pues $(1, 1) \in R$ pero $ (1, 1) \notin AXB$ \\
+\subsection*{Cantidad de Relaciones}
+La cantidad de relaciones de A en B es $\#(P(AxB))$ o $ 2^{n \ast m}$ donde n es la cantidad de elementos de A y m la cantidad de elementos en B.
 \section*{Relaciones de un conjunto en sí mismo}
 Sea A un conjunto cualquiera. Se dice que A está relacionado con A sí y solo sí AXA. \\
 Se dice que R es una relación en A cuando $ R \subseteq AXA$ \\
@@ -551,7 +553,37 @@ Los casos serían algo así (1, 0 op. disp), (2, 1 op. disp), (3, 2 op. disp), .
 Entonces, el cálculo sale de hacer $\frac{9 \ast 10}{2}$ donde 9 es la cantidad de grupos de elementos que tendremos (nótese que el 1 no lo contamos xq no es mayor que ninguno) y el 10 es la cantidad de elementos que tenemos para elegir. Es importante tambien notar, que estamos dividiendo por 2 porque los casos como $(2, 1) = (1, 2)$ en conjuntos son idénticos. 
 \subsection*{Permutaciones}
 Sea A que tiene n elementos, una permutación es un conjunto de longitud n ordenado distinto que A. Básicamente, cambiar el orden de los elementos. \\
-$Ej.$: $ A = \{1, 2, 3\}$ las permutaciones de A son $\{1, 3, 2\}, \{2, 1, 3\}, \{2, 3, 1\}, \{3, 1, 2\}, \{3, 2, 1\}$ 
+\textbf{Ej. 1}: $ A = \{1, 2, 3\}$ las permutaciones de A son $\{1, 3, 2\}, \{2, 1, 3\}, \{2, 3, 1\}, \{3, 1, 2\}, \{3, 2, 1\}$ 
+\subsection*{Fórmula Mágica}
+$(-1)^{n+1}$ nos da el signo de la operación
+\subsection*{Anagrama}
+Permutación de letras que arma otra palabra. Existen n! anagramas de una palabra de n caracteres.
+\subsection*{Anagramas con Repetidos}
+Cuando tenemos caracteres repetidos, sucede que quizá hay dos anagramas iguales pero realmente no son iguales. \\
+\textbf{Ej. 1}: $AAB = AAB$ para los humanos, pero en combinatoria, cada aparición de cada letra, tiene una especie de $"id"$ y el anagrama anterior no es igual pues en combinatoria sería como $A_{0}A_{1}B = A_{1}A_{0}B$. \\  Calculando los anagramas con 3! estaríamos repetiendo casos. \\
+La manera de solucionar esto es realizando: $\frac{3!}{2!}$ donde 3 es la cantidad de letras que tenemos, y 2 es la cantidad de veces que se repite la letra. \\
+\textbf{Ej: 2}: Calcule la cantidad de anagramas de TERRITORIO.  \\
+Hagamos el análisis: 
+\begin{itemize}
+    \item T: Aparece 2 veces.
+    \item R: Aparece 3 veces.
+    \item E: Aparece 1 vez 
+    \item I: Aparece 2 veces.
+    \item O: Aparece 2 veces.
+\end{itemize}
+Entonces, la cantidad de permutaciones de TERRITORIO es: $\frac{10!}{2! \ast 3! \ast 2! \ast 2!}$. 
+\subsection*{Cardinal de Funciones}
+\begin{itemize}
+    \item Inyectiva: $\#A \le \#B$. La inyectividad pide que todo elemento de A esté con alguno en B y no se repitan. Por lo tanto, la manera de hacer esto es que haya suficientes elementos en B como para que los de A apunten.
+    \item Sobreyectiva: $\#A \ge \#B$. La sobreyectividad pide que todo elemento de B esté ocupado por los de A.
+    \item Biyectiva: $\#A = \#B$
+\end{itemize}
+\subsection*{Cantidad de funciones Biyectivas} 
+La cantidad de funciones biyectivas es de \textbf{n!} donde n es la cantidad de elementos que tiene A o B. Es indistinto si es A o B porque justamente si es biyectiva, tienen la misma cantidad de elementos.
+\subsection*{Cantidad de funciones Inyectivas}
+La cantidad de funciones inyectivas es de \textbf{$\frac{m!}{(m-n)!}$} donde m es la cantidad de elementos del conjunto B y n es la cantidad de elementos del conjunto A siendo $f:A\implies B$
+\section*{Números Enteros}
+A partir de ahora, si hablamos de un n, hablamos de un $ n \in \ent$
 \section*{Anexo}
 \subsection*{Pertenencia en Conjuntos}
 \label{subsec:pertenecencia_conjuntos}
