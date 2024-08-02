@@ -19,6 +19,8 @@
 }
 \input{AEDmacros}
 \newcommand{\notimplies}{\;\not\!\!\!\implies}
+\newcommand{\dent}{\mathrel{\mid}}
+\newcommand{\tinvertida}{\rotatebox[origin=c]{180}{$\top$}}
 \title{Álgebra I}
 \author{Tomás Agustín Hernández}
 \date{}
@@ -587,9 +589,33 @@ Decimos que un número a es divisible (\textbf{a/d resto 0}) por d sí y solo s�
 \textbf{Importante}: $ d \le a$ pues de lo contrario la división no sería entera. \\
 Ej.: $ 5 \ | \ 20 \iff 20 = q * 5$ \\
 $ \implies 4 = q $ \\ \\ 
-\textbf{Importante}: No vale que si $d \ | \ a+b \implies d \ | \ a \land d \ | \ b$ pero si vale que $ d \ | \ a \land d \ | \ b \implies d \ | \ a+b$ \\
-En criollo: No vale que si d divide a la suma, entonces d divide a cada uno de los operandos. Pero sí vale que si d divide a los dos operandos separados, los divide sumados.
-
+\textbf{Importante}: No vale que si $d \ | \ a \pm b \implies d \ | \ a \land d \ | \ b$ pero si vale que $ d \ | \ a \land d \ | \ b \implies d \ | \ a \pm b$ \\
+En criollo: No vale que si d divide a la suma/resta entonces d divide a cada uno de los operandos. Pero sí vale que si d divide a los dos operandos separados, los divide sumando/restando.
+\subsection*{Propiedades de los Enteros}
+Aclaración: Quizá haya ciertos conceptos que no se hayan explicado todavía, pero pronto lo haremos. Solo quería juntar todas las propiedades en un solo lugar.
+\begin{itemize}
+    \item \textcolor{blue}{solo coprimos}
+    \item \textcolor{green}{solo primos}
+    \item \textcolor{red}{todos}
+\end{itemize}
+Las propiedades son: 
+\begin{itemize}
+    \item $\textcolor{red}{\cdot} \ d \dent 0$ para cualquier d $\in \ent$  y $ d \neq 0$.
+    \item $\textcolor{red}{\cdot} \ 1 \dent d$ para cualquier $ d \in \ent $ y $ d \neq 0$
+    \item $\textcolor{red}{\cdot} \ d \dent a$ para cualquier $ d \in \ent $ y $ d \neq 0$. Es reflexiva.
+    \item $\textcolor{red}{\cdot} \ d \dent a \iff d \dent -a \iff -d \dent a \iff -d \dent -a $
+    \item $\textcolor{red}{\cdot} \ d \dent a \implies \longitud{d} \le \longitud{a}$
+    \item $\textcolor{red}{\cdot} \ d \dent a, \ d \dent b \implies d \dent a \pm b$
+    \item $\textcolor{green}{\cdot} \ d \dent a \lor d \dent b \implies d \dent ab$
+    \item $\textcolor{red}{\cdot} \ d \dent a \implies d \dent ca $
+    \item $\textcolor{blue}{\cdot} \ d \dent ab \iff d \dent b$ con $ d \tinvertida a$
+    \item $\textcolor{green}{\cdot} \ d \dent ab \implies d \dent a \lor d \dent b$ 
+    \item $\textcolor{red}{\cdot} \ d \dent a \iff d^{n} \dent a^{n}$
+    \item $\textcolor{red}{\cdot} \ a \dent b \land b \dent c \implies a \dent c$
+    \item  $\textcolor{blue}{\cdot} \ d \dent a \land c \dent a \iff dc \dent a$ con $ d \tinvertida c$
+    \item $\textcolor{red}{\cdot} \ c \dent a+b \land c \dent \implies c \dent b$
+     \item  $\textcolor{blue}{\cdot} \ d \tinvertida a \iff d \tinvertida a^{n} \iff d^{n} \tinvertida a$
+\end{itemize}
 \section*{Anexo}
 \subsection*{Pertenencia en Conjuntos}
 \label{subsec:pertenencia_conjuntos}
