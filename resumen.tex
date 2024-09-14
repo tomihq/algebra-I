@@ -318,7 +318,9 @@ Para cada $x \in A$, la clase de equivalencia de x es el conjunto: $\bar{x} = [x
 TODO: Añadir los ejemplos que hice en la tablet al anexo.
 \subsection*{Representante de clase}
 Cualquier elemento de una clase de equivalencia representa a su clase. 
-En la sección de \hyperref[subsec:clases_equivalencia]{\underline{\textbf{Clases de Equivalencia}}} cada clase $[x]$ es representada por x. \\
+En la sección de \hyperref[subsec:clases_equivalencia]{\underline{\textbf{Clases de Equivalencia}}} cada clase $[x]$ es representada por x. 
+\subsection*{Partición}
+Conjunto con todas las clases de equivalencia.
 \section*{Funciones}
 Una función $A \leftarrow B$ es una relación $ f \subseteq AXB$ entre A y B que satisface: 
 \begin{itemize}
@@ -616,6 +618,78 @@ Las propiedades son:
     \item $\textcolor{red}{\cdot} \ c \dent a+b \land c \dent \implies c \dent b$
      \item  $\textcolor{blue}{\cdot} \ d \tinvertida a \iff d \tinvertida a^{n} \iff d^{n} \tinvertida a$
 \end{itemize}
+\subsection*{Congruencias}
+Habla de divisibilidad sin cocientes. \\
+$a, b \in \ent$ son congruentes módulo m si $m \ | \ a-b$ y en ese caso escribimos $a \equiv b (mod m)$ \\
+\[a \equiv b \ (mod \ d) \iff d \ | \ a - b \] 
+\subsection*{Congruencia entre dos números}
+Sean $a, b \in \ent$, decimos que a y b son congruentes sí y solo sí el resto de $ a \ mod \ n$ y $b \ mod \ n$ es el mismo, es decir: \\
+\[a \equiv b(n) \iff r_{n}(a) = r_{n}(b)\]
+\subsection*{Cantidad de clases de equivalencia en mod n}
+Existen \textbf{n} clases de equivalencia mod n. Una por cada posible resto. \\
+Ej.: mod 5 tiene 5 clases de equivalencia $\overline{0}, \overline{1}, \overline{2}, \overline{3}, \overline{4}, \overline{5}$
+\subsection*{Propiedades de las Congruencias}
+\begin{itemize}
+    \item $a \equiv 0(d) \iff d | a$
+    \item Es una relación de equivalencia
+    \item $a_{1} \equiv b_{1}(d) \land a_{2} \equiv b_{2}(d) \implies a_{1} + a_{2} \equiv b_{1} + b_{2}(d)$
+    \item Sean $a, b, c \in \ent$ vale que $a \equiv b(d) \implies c * a \equiv c * b (d)$
+    \item $a_{1} \equiv b_{1}(d) \land a_{2} \equiv b_{2}(d) \implies a_{1} * b_{1} \equiv a_{2} * b_{2}(d)$
+    \item $a \equiv b(d) \implies a^{n} \equiv b^{n}(d)$
+\end{itemize}
+\subsection*{Algoritmo de División}
+Sean $a \in \ent$ y $b \in \nat$, $\exists q \in \ent$ y $r \in \nat$ / $a = q * b + r$ donde 
+\begin{itemize}
+    \item r: resto 
+    \item q: cociente 
+\end{itemize}
+\textbf{Nota}: El resto está entre $0 \le r \le b$, es decir, es siempre positivo y siempre menor al cociente. \\
+\textbf{Notación}: $a \equiv b(n) \iff r_{n}(a) = b$
+\subsection*{Propiedades del Resto}
+\begin{itemize}
+    \item $a \equiv r_{m}(a) \ mod \ m$
+    \item $r_{m}(a+b) = r_{m}(a) + r_{m}(b)$
+    \item $r_{m}(a*b) = r_{m}(a) * r_{m}(b)$
+    \item $r_{m}(a-b) = r_{m}(a) - r_{m}(b)$
+    \item $r_{m}(a^{k}) = r_{m}(r_{m}(a)^{k})$
+\end{itemize}
+Ej.: $r_{5}(5^{500}) = r_{5}(5^{250} * 5^{250}) = r_{5}(r_{5}(5^{125}) * r_{5}(5^{125}) * r_{5}(5^{125}) * r_{5}(5^{125}))$
+\subsection*{Máximo Común Divisor}
+Sean $a, b \in \ent$ no simúltaneamente nulos. Notamos al MCD entre a y b de la forma $(a:b)$ \\
+\[(a:b) = MAX Divisor(a, b)\]
+\subsection*{Propiedades del MCD}
+\begin{itemize}
+    \item El MCD es un divisor común de a y b, y es el máximo.
+    \item El MCD siempre es un número positivo.
+    \item Si a y b son ambos nulos $\implies (a:b) = 0$
+    \item Si a y b no ambos nulos. Si b es nulo pero a no, entonces $(a:0)$ es $|a|$. Si b no es nulo pero a si, entonces $(0:b)$ es $|b|$
+    \item Vale la simetría en el MCD. Es decir $(a:b) = (b:a)$
+    \item El MCD es siempre menor o igual al máximo entre a y b. Osea $(a:b) \le max(a, \ b)$
+    \item Como solo importa el MCD positivo vale que $(-a:-b)=(a:-b)=(-a:b)=(a:b)$
+    \item Al MCD le puedo sumar o restar un múltiplo de otro y el MCD seguirá valiendo.
+    \begin{itemize}
+        \item Atención: Solo una operación por vez: $(a+cb:b+ca)$ NO vale pero $(a+cb:b)$ y luego (considere a = a+cb) $(a:b+ca)$ sí.
+    \end{itemize}
+    \item $MCD(ac:bc) = MCD(a:b) * |c|$ con $a, b, c \in \ent$
+    \item $MCD(a^{k}:b^{k}) = MCD(a:b)^{k}$
+    \item $MCD(a, b) | MCD(a':b')$
+    \item $d | a \land d | b \iff d | (a:b)$
+\end{itemize}
+\textbf{Nota}: El símbolo ' indica que es coprimo.
+\subsection*{Números Coprimos}
+Sean a y b, no simultáneamente nulos, son aquellos que $(a:b)=1$. \\
+Ej.: 5 y 2 son coprimos. \\
+\textbf{Importante}: Si a ambos números (a y b) los divido por su MCD entonces, el resultado nos arroja a' y b' donde ellos dos serán coprimos.
+\subsection*{Propidades de a y b coprimos}
+\begin{itemize}
+    \item $a | bc \implies a | c$
+    \item $a | c \land b | c \implies ab | c$ 
+    \item $MCD(a:bc) = MCD(a:c)$
+    \item $MCD(ab:c) = MCD(a:c) * MCD(b:c)$
+    \item $MCD(a^{k}:b^{l}) = 1$ con $k, l \in \nat_{0}$
+\end{itemize}
+\subsection*{Algoritmo de Euclides}
+
 \section*{Anexo}
 \subsection*{Pertenencia en Conjuntos}
 \label{subsec:pertenencia_conjuntos}
