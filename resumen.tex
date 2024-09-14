@@ -689,7 +689,88 @@ Ej.: 5 y 2 son coprimos. \\
     \item $MCD(a^{k}:b^{l}) = 1$ con $k, l \in \nat_{0}$
 \end{itemize}
 \subsection*{Algoritmo de Euclides}
+$MCD(a:b)$ = si $a>b (a-cb:b)$ \\
+$MCD(a:b)$ = si $a > b ((a-cb)-cb:b)$ \\
+$MCD(a:b) = MCD(r_{1}:b) = MCD(r_{2}:b) = MCD(r_{3}:b)$
+\begin{lstlisting}
+    a = 24 b = 10
 
+    24 = 2 * 10 + 4
+    10 = 2 * 4 + 2
+    4 = 2 * 2 + 0
+
+    MCD(24:10) = 2 Resto = 0
+    (24:10) = (10:4) = (4:2) = (2:0) = 2
+
+    El MCD es el anteúltimo resto != 0
+\end{lstlisting}
+\subsection*{Identidad de Bezut}
+Es el Algoritmo de Euclides pero extendido. \\
+Se realiza de manera ida y vuelta, en vez de solamente de ida como el Algoritmo de Euclides. \\
+En la IDA encontramos MCD y resto; en la vuelta los s y t que nos permiten escribir como combinación lineal a \textbf{a} y \textbf{b}. \\
+\begin{lstlisting}
+    Hallar s y t de (27:8)
+
+    27 = 3 * 8 + 3 
+    8 = 2 * 3 + 2
+    3 = 1 * 2 + 1
+    2 = 1 * 2 + 0
+
+    Hallo s y t con algoritmo de euclides extendido 
+    2 = 1 * 2 + 0 => 0 = 2 - 1 * 2
+    3 = 1 * 2 + 1 => 0 = 2 - 1 (8 - 2 * 3)
+    8 = 2 * 3 + 2 => 0 = 2 - 1 (8 - 2 * 27 - 3 * 8)
+    27 = 3 * 8 + 3 
+\end{lstlisting}
+\subsection*{Números Primos}
+Un número $n$ es primo sí y solo sí tiene exactamente dos divisores positivos. \\
+Un número es compuesto si es mayor que 1, no es primo y se puede armar como producto de primos. \\
+\begin{itemize}
+    \item Un número es PRIMO sí y solo sí NO es divisible por un PRIMO menor que él.
+    \item Un número es: O primo, O compuesto. No hay otra posibilidad.
+\end{itemize}
+\subsection*{Criba de Aristótenes}
+Busco primo, tacho múltiplos, el siguiente no tachado es primo. 
+\[\begin{minipage}[b]{0.6\textwidth}
+    \includegraphics[width=\linewidth]{assets/criba_aristotenes.jpg}
+    \label{fig:criba_aristotenes}
+\end{minipage}\]
+\subsection*{Teorema Fundamental de la Aritmética}
+Todo número puede armarse como producto de primos y esta forma es única. \\
+Algunos ejemplos 
+\begin{itemize}
+    \item $10 = 5 * 2 = 2 * 5$
+    \item $30 = 2 * 5 * 3 = 5 * 3 * 2 = 2 * 3 * 5$
+    \item $4 = 2^{2} = 2 * 2$
+\end{itemize}
+\textbf{Recuerdo}: Si p primo $ p \ | \ ab \implies p \ | \ a \lor p \ | \  b$ \\
+\textbf{Recuerdo}: Si p primo $p\ | \ a_{1} * a_{2} * a_{3} ... a_{n} \implies p \ | \ a_{1} \lor p \ | \ a_{2} ... p \ | \ a_{n}$ \\
+\subsection*{Valuación de un número primo}
+Es la cantidad de veces que se repite un número en un producto de primos. \\
+Ej.: $45 = 3 * 5 * 3 \ V_{3}(45) = 2 \land V_{5}(45) = 1$ \\
+\textbf{Nota}: No existen valuaciones de números compuestos.
+\subsection*{Propiedades de Valuaciones}
+\begin{itemize}
+    \item $V_{p}(a * b) = V_{p}(a) + V_{p}(b)$
+    \item $V_{p}(a^{n}) = n * V_{p}(a)$
+    \item $d | a \iff V_{p}(d) \le V_{p}(a)$
+\end{itemize}
+\subsection*{Cantidad de Divisores de un número}
+Multiplicación de veces que aparece cada exponente + 1. \\
+Ej.: $2^{3} * 5^{2} * 7 * 19 \implies \alpha_{1} = 3 \ \alpha_{2} = 2 \ \alpha_{3} = 1 \ \alpha_{4} = 1$, luego agrego el 0 $\alpha_{1} = 4 \ \alpha_{2} = 3 \ \alpha_{3} = 2 \ \alpha_{4} = 2$ \\
+Entonces, el nro tiene 48 divisores. \\
+\subsection*{Mínimo Común Múltiplo}
+Sean $a, b \in \ent$ no simultáneamente nulos 
+\begin{itemize}
+    \item $MCM(a, b) \neq 0$ pues $(a * b)$ siempre es un posible MCM. 
+    \item $MCM(a, b) = Min M(a, b)$
+    \item Todas las propiedades del MCD valen en MCM. 
+    \item $MCD(a, b) = p_{1}^{Min(a_{1}, b_{1})} ... P_{r}^{Min(a_{r}, b_{r})}$
+    \item $MCD(a, b) * MCD(a, b) = P_{1}^{a_{1} + b_{1}} ... P_{r}^{a_{r}+b_{r}}$
+    \item $MCM = \frac{ab}{(a:b)}$
+\end{itemize}
+\section*{Ecuaciones Diofánticas}
+Son de la forma $ax + by = M \iff ax + by = n(M)$
 \section*{Anexo}
 \subsection*{Pertenencia en Conjuntos}
 \label{subsec:pertenencia_conjuntos}
